@@ -10,13 +10,13 @@ public:
         if (k == 0) return;
         for (int start = 0, count = 0; count < size; ++start) {
             int current = start;
-            int prev = nums[current];
+            int prev_val = nums[current];
             do {
                 int next = (current + k) % size;
-                int temp = nums[next];
-                nums[next] = prev;
+                int temp_val = nums[next];
+                nums[next] = prev_val;
                 current = next;
-                prev = temp;
+                prev_val = temp_val;
                 ++count;
             } while (current != start);
         } 
