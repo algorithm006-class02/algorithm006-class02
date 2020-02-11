@@ -1,6 +1,7 @@
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         # 法一：利用组成字典来去重
+        # 内存说明：nums[:]使用的还是nums原来的内存，没有开辟新的内存空间
         # nums[:] = dict.fromkeys(nums).keys()
         # return len(nums)
 
