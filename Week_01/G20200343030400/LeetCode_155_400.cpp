@@ -3,27 +3,32 @@
 
 class MinStack {
 private:
-    stack<pair<int, int>> minStk;
+    stack<int> stk;
+    stack<int> minStk;
 
 public:   
     void push(int x) {
+        stk.push(x);
         if (minStk.empty()) {
-            minStk.push({x, x});
-        } else {
-            minStk.push({x, min(x, minStk.top().second)});
+            minStk.push(x);
+        } else if (x <= minStk.top()) {
+            minStk.push(x);
         }
     }
     
     void pop() {
-        minStk.pop();
+        if (stk.top() == minStk.top()) {
+            minStk.pop();
+        }
+        stk.pop();
     }
     
     int top() {
-        return minStk.top().first;
+        return stk.top();
     }
     
     int getMin() {
-        return minStk.top().second;   
+        return minStk.top();   
     }
 };
 
