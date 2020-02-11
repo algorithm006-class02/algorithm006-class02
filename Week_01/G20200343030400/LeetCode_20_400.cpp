@@ -28,7 +28,7 @@ public:
     }
 };
 
-class Solution-ascii {
+class Solution_ascii {
 public:
     bool isValid(string s) {
         int len = s.size();
