@@ -8,11 +8,11 @@
 
 [21. 合并两个有序链表](https://github.com/EncodedStar/algorithm006-class02/blob/master/Week_01/G20200343030428/LeetCode_21_428.cpp)
 
-[88. 合并两个有序数组](https://github.com/EncodedStar/algorithm006-class02/blob/master/Week_01/G20200343030428/LeetCode_88_428.cpp)
+[88. 合并两个有序数组](https://github.com/EncodedStar/algorithm006-class02/blob/master/Week_01/G20200343030428/LeedCode_88_428.cpp)
 
-[1. 两数之和](https://github.com/EncodedStar/algorithm006-class02/blob/master/Week_01/G20200343030428/LeetCode_1_428.cpp)
+[1. 两数之和](https://github.com/EncodedStar/algorithm006-class02/blob/master/Week_01/G20200343030428/LeedCode_1_428.cpp)
 
-[283. 移动零](https://github.com/EncodedStar/algorithm006-class02/blob/master/Week_01/G20200343030428/LeetCode_283_428.cpp)
+[283. 移动零](https://github.com/EncodedStar/algorithm006-class02/blob/master/Week_01/G20200343030428/LeedCode_283_428.cpp)
 
 [66. 加一](https://github.com/EncodedStar/algorithm006-class02/blob/master/Week_01/G20200343030428/LeedCode_66_428.cpp)
 
