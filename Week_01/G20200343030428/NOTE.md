@@ -14,7 +14,7 @@
 
 [283. 移动零](https://github.com/EncodedStar/algorithm006-class02/blob/master/Week_01/G20200343030428/LeetCode_283_428.cpp)
 
-[66. 加一](https://github.com/EncodedStar/algorithm006-class02/blob/master/Week_01/G20200343030428/LeetCode_66_428.cpp)
+[66. 加一](https://github.com/EncodedStar/algorithm006-class02/blob/master/Week_01/G20200343030428/LeedCode_66_428.cpp)
 
 用 add first 或 add last 这套新的 API 改写 Deque 的代码
 
