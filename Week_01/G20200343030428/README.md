@@ -23,4 +23,4 @@
   * [42. 接雨水](https://github.com/EncodedStar/algorithm006-class02/blob/master/Week_01/G20200343030428/LeetCode_42_428.cpp)
 
 # 课后笔记
-  * [笔记](https://github.com/EncodedStar/algorithm006-class02/blob/master/Week_01/G20200343030428/NOTE.md)
+  * [【428-week 01】笔记名字](https://github.com/EncodedStar/algorithm006-class02/blob/master/Week_01/G20200343030428/NOTE.md)
