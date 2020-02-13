@@ -12,7 +12,7 @@ public:
         vector<int> ans;
         deque<int> dq;
         for (int i = 0; i < size; ++i) {
-            while (!dq.empty() && nums[i] > nums[dq.back()])
+            while (!dq.empty() && nums[i] >= nums[dq.back()])
                 dq.pop_back();
             dq.push_back(i);
             if (dq.front() + k == i)
