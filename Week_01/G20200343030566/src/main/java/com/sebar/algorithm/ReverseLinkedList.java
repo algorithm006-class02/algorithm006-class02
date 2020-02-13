@@ -8,19 +8,25 @@ import java.util.Stack;
  * @Description
  */
 public class ReverseLinkedList {
-    class ListNode {
-        int val;
-        ListNode next;
+    public static void main(String[] args) {
+        ListNode oneNode = new ListNode(1);
+        ListNode twoNode = new ListNode(2);
+        ListNode threeNode = new ListNode(3);
+        ListNode fourNode = new ListNode(4);
+        ListNode fifthNode = new ListNode(5);
 
-        /**
-         * 构造函数
-         *
-         * @param val
-         * @return
-         */
-        ListNode(int val) {
-            this.val = val;
-        }
+        oneNode.next = twoNode;
+        twoNode.next = threeNode;
+        threeNode.next = fourNode;
+        fourNode.next = fifthNode;
+        fifthNode.next = null;
+
+        ReverseLinkedList solutionOne = new ReverseLinkedList();
+//        ListNode listNode = solutionOne.reverseList(oneNode);
+//        ListNode listNode2 = solutionOne.solutionTwo(oneNode);
+//        ListNode listNode2 = solutionOne.recursiveSolution(oneNode);
+        ListNode listNode = solutionOne.twoPointSolution(oneNode);
+        System.out.println(1);
     }
 
     /**
@@ -58,7 +64,8 @@ public class ReverseLinkedList {
 
     /**
      * 采用栈进行反转
-     *  借用栈先进后出的特性
+     * 借用栈先进后出的特性
+     *
      * @return
      */
     public ListNode solutionTwo(ListNode head) {
@@ -87,4 +94,46 @@ public class ReverseLinkedList {
         return newListNode;
     }
 
+    /**
+     * 下一个元素的next指针要指回当前节点
+     */
+    public ListNode recursiveSolution(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode newNode = recursiveSolution(head.next);
+        head.next.next = head;
+        head.next = null;
+        return newNode;
+    }
+
+    public ListNode twoPointSolution(ListNode head) {
+        ListNode prev = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode nextTemp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextTemp;
+        }
+        return prev;
+    }
+
+    static class ListNode {
+        int val;
+        ListNode next;
+
+        /**
+         * 构造函数
+         *
+         * @param val
+         * @return
+         */
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode() {
+        }
+    }
 }
