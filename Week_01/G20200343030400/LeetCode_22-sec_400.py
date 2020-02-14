@@ -35,4 +35,4 @@ class Solution:
                 ans.append("".join(s));
             s = self.nextPermutation(s)
                
-        return list(set(ans))        
+        return ans        
