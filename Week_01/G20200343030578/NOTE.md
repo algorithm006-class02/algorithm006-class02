@@ -21,4 +21,4 @@ System.out.println(deque);
 
 # Java Queue 及 Priority Queue 源码浅析
 
-记录在[个人博客]([https://cosmosning.github.io/2020/02/14/Queue%E5%8F%8APriorityQueue%E6%BA%90%E7%A0%81%E6%B5%85%E6%9E%90-Java/](https://cosmosning.github.io/2020/02/14/Queue及PriorityQueue源码浅析-Java/))中，随时更新。
+记录在[个人博客](https://cosmosning.github.io/2020/02/14/Queue及PriorityQueue源码浅析-Java/)中，随时更新。
