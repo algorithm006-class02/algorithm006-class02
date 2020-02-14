@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created by HuGuodong on 2/14/20.
  */
-public class LeeCode_15_364 {
+public class LeetCode_15_364 {
 
   class Solution {
 
