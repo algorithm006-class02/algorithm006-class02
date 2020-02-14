@@ -80,7 +80,18 @@ public class TrappingRainWater {
 
     public int trap4(int[] height) {
         // 双指针优化法-一次遍历
-        // 看不懂
-        return 0;
+        int capacity = 0;
+        int maxLeft = 0;
+        int maxRight = 0;
+        for (int i = 0, j = height.length - 1; i < j; ) {
+            maxLeft = Math.max(maxLeft, height[i]);
+            maxRight = Math.max(maxRight, height[j]);
+            if (maxLeft < maxRight) {
+                capacity += maxLeft - height[i++];
+            } else {
+                capacity += maxRight - height[j--];
+            }
+        }
+        return capacity;
     }
 }
