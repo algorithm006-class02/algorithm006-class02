@@ -32,11 +32,12 @@
 // @lc code=start
 class Solution {
 public:
-    void moveZeroes(vector<int>& nums) {
-        /* 解法一：遍历数组，遇到0即删除，同时计数，最后再尾部添加对应个数的0。使用vector的删除功能。数组的删除
-           需要移动元素，所以效率不高；在尾部增加的性能较好。时间复杂度 O(n^2)
-         *16ms 62.11 %  
-        */
+    /* 解法一：遍历数组，遇到0即删除，同时计数，最后再尾部添加对应个数的0。使用vector的删除功能。数组的删除
+    需要移动元素，所以效率不高；在尾部增加的性能较好。时间复杂度 O(n^2)
+    16ms 62.11 %  
+    */
+     void moveZeroes(vector<int>& nums) {
+
         int num = 0 ;
         for ( auto it = nums.begin () ; it != nums.end () ; ) {
             if ( *it == 0 ) {
@@ -50,11 +51,14 @@ public:
 
         nums.insert(nums.end(),num,0);
         
-        
-       /* 解法二：遍历数组，找到为0的元素后，向后寻找第一个不为0的元素，进行位置交换。每个元素只访问了一遍，时间复杂度为
-       O(n)，效率大大提升
-       8 ms 93.73%
-       */
+    } 
+
+
+    /* 解法二：遍历数组，找到为0的元素后，向后寻找第一个不为0的元素，进行位置交换。每个元素只访问了一遍，时间复杂度为
+    O(n)，效率大大提升
+    8 ms 93.73%
+    */
+     void moveZeroes(vector<int>& nums) {
        int i = 0 ,j = -1 ;
        for ( ; i < nums.size() ; ++ i )
        {
@@ -72,9 +76,42 @@ public:
                }
            }
 
+       }     
+    } 
+
+    /*
+    解法三：高赞答案，将不为0的元素逐个放到前面；最后再补充0;思路简单清晰，时间复杂度O(n)
+    8ms 93.17%
+    */    
+    void moveZeroes(vector<int>& nums) {
+       int j = 0 ; 
+       for ( int i = 0 ; i < nums.size() ; ++ i ) {
+           if ( nums[ i ] != 0 ) {
+               nums[ j++ ] = nums [ i ] ;
+           }
        }
-       
+
+       for ( ; j < nums.size() ; ++ j ) {
+           nums [ j ] = 0 ;
+       }
+   } 
+
+   /*
+   解法四：高赞答案，思路同解法二，但逻辑更简单,last始终表示可以写入非零元素的下标，复杂度O(n) ；
+   4ms 99.32%
+   */
+    void moveZeroes(vector<int>& nums) {
+        for ( int last = 0 , i = 0 ; i < nums.size() ; ++ i ) {
+            if ( nums[ i ] != 0) {
+                //若last == i 则表示遍历的元素都不是0 ;
+                //若存在0，则last一定是0的下标，而且last < i ;
+                //两种情况综合可直接互换；
+                swap ( nums[ last ++ ] , nums[ i ] ) ; 
+                
+            }
+        }
     }
+
 };
 // @lc code=end
 
