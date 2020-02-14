@@ -4,7 +4,7 @@
 
 [LeetCode-0011](https://leetcode-cn.com/problems/container-with-most-water/)
 
-Solution 1: brtue force, time complexity: O(N^2)
+Solution 1: brute force, time complexity: O(N^2)
 
 ```java
 class Solution {
@@ -57,4 +57,6 @@ class Solution {
     }
 }
 ```
+
+[LeetCode-11](LeetCode_11_364.java)
 
