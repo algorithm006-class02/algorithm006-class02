@@ -57,12 +57,12 @@
 // @lc code=start
 class Solution {
 public:
-    int removeDuplicates(vector<int>& nums) {
-        /*
-        解法一：常规解法，遇到后一个和当前相同的元素则删除，涉及到数组元素到删除，需要多次搬迁数据，效率较低，时间复杂度O(n^2)
-        332ms 5.09%
-        */
-        
+    
+    /*
+    解法一：常规解法，遇到后一个和当前相同的元素则删除，涉及到数组元素到删除，需要多次搬迁数据，效率较低，时间复杂度O(n^2)
+    332ms 5.09%
+    */
+    int removeDuplicates(vector<int>& nums) {    
         for ( auto it = nums.begin() ; it != nums.end() ; )
         {
             auto next = it+1;
@@ -77,12 +77,14 @@ public:
             }
         }
         return nums.size();
-        
-        /*
-        解法二：使用2个数组下标i，j；i代表当前最后一个不重复元素到位置，j代表遍历到到位置；把遍历到到不重复的元素替换到位置 i 处；
-        每个元素只遍历一遍，时间复杂度O(n)
-        12ms 97.81%
-        */
+    }
+
+    /*
+    解法二：使用2个数组下标i，j；i代表当前最后一个不重复元素到位置，j代表遍历到到位置；把遍历到到不重复的元素替换到位置 i 处；
+    每个元素只遍历一遍，时间复杂度O(n)
+    12ms 97.81%
+    */
+    int removeDuplicates(vector<int>& nums) {
         int i = 0 , j = -1 ;
         for ( ; i < nums.size() ; ) {
             if ( i + 1 >= nums.size() ) break;
@@ -102,6 +104,45 @@ public:
         }
         return  nums.size() > 0 ? i + 1 : 0 ;  //注意判定空数组情况
     }
+
+   /*
+    解法三：高赞解法：通过计算重复元素的个数来计算下标
+    12ms 97.81%
+    */
+    int removeDuplicates(vector<int>& nums) {
+        //count 代表重复的个数；
+        int count = 0 ;
+        for ( int i = 1 ; i < nums.size() ; ++ i ) {
+            //计算重复个数
+            if ( nums[ i ] == nums [ i - 1 ] ) {
+                count ++ ;
+            }
+            else {
+                //此处不易理解，不重复元素可填充的下标 = 当前下标-重复的个数；
+                //含义是：前 i 个元素里有 count 个重复的元素。那么不重复元素即为 i - count 个；
+                //下标从0 开始， 那么当前不重复元素的下标即为 i - count 
+                nums [ i - count ] = nums [ i ] ;
+            }
+        }
+
+        return n - count ;
+    }    
+
+    /*
+    解法四：高赞解法：思路同解法二，只是代码更简单，时间复杂度O(n)
+    12ms 97.81%
+    */
+    int removeDuplicates(vector<int>& nums) {
+        //count 代表重复的个数；
+        int i = 0 ;  // 
+        for ( int n : nums ) {
+            if ( i == 0 || n > nums [ i - 1 ] ) {
+                nums [ i++ ] = n;
+            }
+        }
+
+        return i ;
+    }        
 };
 // @lc code=end
 
