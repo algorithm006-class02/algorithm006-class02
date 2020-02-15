@@ -11,9 +11,9 @@ def remove(m, total = 100):
 	i = - 1
 	j = 0
 	while count >= m:
-		while circle[(i + 1) % total] != 0:
-			i = (i + 1) % total
 		i = (i + 1) % total
+		while circle[i] != 0:
+			i = (i + 1) % total
 		j += 1
 		if j % m == 0:
 			circle[i] = 1
@@ -21,4 +21,4 @@ def remove(m, total = 100):
 	for i in range(total):
 		if circle[i] == 0:
 			ans.append(i + 1)	
-	return ans;
+	return ans
