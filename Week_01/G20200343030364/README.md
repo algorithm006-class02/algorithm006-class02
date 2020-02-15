@@ -56,6 +56,3 @@ About source code in java:
 ```
 
 For the detail, I would refer to Algorithm 4 later.
-
-
-
