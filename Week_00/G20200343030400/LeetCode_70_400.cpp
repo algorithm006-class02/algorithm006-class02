@@ -3,6 +3,7 @@
 class Solution {
 public:
     int climbStairs(int n) {
+        if (n <= 3) return n;
         vector<int> f(n+1);
         f[0] = 1;
         f[1] = 1;
@@ -17,7 +18,7 @@ public:
 class Solution2 {
 public:
     int climbStairs(int n) {
-        if (n < 2) return n;
+        if (n <= 3) return n;
         int a = 1, b = 1, c = 2;
         while (--n) {
             c = a + b;
