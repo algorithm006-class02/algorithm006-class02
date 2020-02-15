@@ -26,11 +26,11 @@ public class LeetCode_283_490 {
      */
     public void moveZeroes(int[] nums) {
         int i = 0;
-        int j = 0;
-        for(; j < nums.length ; j++) {
+        for(int j = 0; j < nums.length ; j++) {
             if(nums[j] != 0) {
                 if(i != j) {
-                    exchange(nums,i,j);
+                    nums[i] = nums[j];
+                    nums[j] = 0;
                 }
                 i++;
             }

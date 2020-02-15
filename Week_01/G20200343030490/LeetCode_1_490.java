@@ -1,6 +1,5 @@
 import java.util.HashMap;
 import java.util.Map;
-import java.util.PriorityQueue;
 
 /**
  * @author:
@@ -23,13 +22,13 @@ import java.util.PriorityQueue;
 public class LeetCode_1_490 {
 
     public int[] twoSum(int[] nums, int target) {
-        Map<Integer,Integer> sums = new HashMap<>(16);
+        Map<Integer,Integer> diffMap = new HashMap<>(16);
         for(int i = 0 ;i < nums.length ; i++) {
             int diff = target - nums[i];
-            if(sums.get(diff) != null) {
-                return new int[]{i,sums.get(diff)};
+            if(diffMap.get(diff) != null) {
+                return new int[]{diffMap.get(diff),i};
             }else {
-                sums.put(nums[i],i);
+                diffMap.put(nums[i],i);
             }
         }
         return null;
