@@ -15,6 +15,6 @@ def remove(m, total = 100):
 			i = (i + 1) % total
 		j += 1
 		if j % m == 0:
-			circle[i] = 1
+			circle[i] = count
 			count -= 1
 	return [idx + 1 for idx, a in enumerate(circle) if a == 0]
