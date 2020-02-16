@@ -2,6 +2,7 @@
  * https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/
  */
 public class DeleteDuplicates {
+
     public int removeDuplicates(int[] nums) {
         //去重
         int count = 1;
