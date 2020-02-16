@@ -1,0 +1,65 @@
+#--*--coding:utf-8--*--
+class LNode:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+        return
+
+def add_list_item(llist):
+    if len(llist) == 0 :
+        return None
+    head = LNode(llist[0])
+    if len(llist) == 1:
+        return head
+    p = head
+    for i in range(1, len(llist)):
+        p.next = LNode(llist[i])
+        p = p.next
+    return head
+
+def mergeTwoLists(l1,l2):
+    if l1 and l2 :
+        if l1.data > l2.data:
+            l1 ,l2 = l2 ,l1
+        l1.next = mergeTwoLists(l1.next,l2)
+    return l1 or l2
+
+# python : p is not None 可以简写为 p
+# python : and 和 or 都是短路语
+
+a = [1,2,4]
+b = [1,2,4]
+c = []
+d = []
+e = [1,2,3,4,5,5,5,5,5,5,6]
+f = [1]
+
+
+l1 = add_list_item(a)
+l2 = add_list_item(b)
+l3 = add_list_item(c)
+l4 = add_list_item(d)
+l5 = add_list_item(e)
+l6 = add_list_item(f)
+
+la = mergeTwoLists(l1,l2)
+lb = mergeTwoLists(l3,l4)
+lc = mergeTwoLists(l6,l5)
+
+while la :
+    print(la.data)
+    la = la.next
+
+print('*'*20)
+
+while lb :
+    print(lb.data)
+    lb = lb.next
+
+print('*'*20)
+while lc :
+    print(lc.data)
+    lc = lc.next
+
+
+
