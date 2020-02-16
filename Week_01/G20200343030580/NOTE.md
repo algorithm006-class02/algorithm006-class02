@@ -107,3 +107,47 @@ offer方法的流程很简单
 
 ### 分析 Priority Queue 的源码
 
+java.util.PriorityQueue是一个无边界的基于priority heap存储的priority queue。PriorityQueue的元素是按照自然顺序或者Comparator的算法指定的顺序排序的。
+
+#### 构造函数
+PriorityQueue提供了7个构造函数：
+* public PriorityQueue();//以DEFAULT_INITIAL_CAPACITY为初始化大小的队列。DEFAULT_INITIAL_CAPACITY = 11。
+* public PriorityQueue(int initialCapacity);//设置了初始化大小。
+* public PriorityQueue(Comparator<? super E> comparator);//设置了comparator。
+* public PriorityQueue(int initialCapacity,
+                           Comparator<? super E> comparator);//设置初始化大小和comparator。
+* public PriorityQueue(Collection<? extends E> c);//用一个Collection初始化队列里的元素。
+* public PriorityQueue(PriorityQueue<? extends E> c);//用另外一个PriorityQueue初始化队列里的元素。
+* public PriorityQueue(SortedSet<? extends E> c);//用一个SortedSet初始化队列里的元素。
+
+#### 存储&关键属性
+
+* Object[] queue;
+* int size; 队列里的元素数量。
+* Comparator<? super E> comparator; 比较器，也可以为空。
+* int modCount; 队列被操作的次数。
+
+#### 关键的方法的实现
+
+##### boolean add(E e)
+
+是调用boolean offer(E e)方法来实现的。
+
+##### boolean offer(E e)
+
+关键的操作：
+* modCount++
+* 如果size（也就是队列的大小）大于了Object[] queue，就需要先扩容，扩容是调用void grow(int minCapacity)方法来实现的。
+* 如果队列是空的，则将e塞进queue[0]。
+* 否则，调用void siftUp(int k, E x);重新调整heap。
+
+##### E peek()
+
+如果队列不为空，则返回queue[0]。
+
+##### E poll()
+
+* 如果队列为空，返回null
+* modCount++
+* 取出queue[0]
+* 重新调整heap。
