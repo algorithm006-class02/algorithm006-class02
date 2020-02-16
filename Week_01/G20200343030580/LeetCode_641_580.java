@@ -1,25 +1,17 @@
 class MyCircularDeque {
 
-    private static class ListNode {
-        int val;
-        ListNode pre;
-        ListNode next;
-
-        public ListNode(int value) {
-            val = value;
-        }
-    }
-
+    private int[] items = null;
     private int capacity;
     private int size = 0;
-    private ListNode head;
-    private ListNode tail;
+    private int head = -1;
+    private int tail = 0;
 
     /**
      * Initialize your data structure here. Set the size of the deque to be k.
      */
     public MyCircularDeque(int k) {
         capacity = k;
+        items = new int[k];
     }
 
     /**
@@ -29,16 +21,11 @@ class MyCircularDeque {
         if (isFull()) {
             return false;
         }
-
-        ListNode node = new ListNode(value);
-        if (head == null) {
-            head = node;
-            tail = node;
-        } else {
-            node.next = head;
-            head.pre = node;
-            head = node;
+        head++;
+        if (head == items.length) {
+            head = 0;
         }
+        items[head] = value;
         size++;
         return true;
     }
@@ -50,16 +37,11 @@ class MyCircularDeque {
         if (isFull()) {
             return false;
         }
-
-        ListNode node = new ListNode(value);
-        if (tail == null) {
-            head = node;
-            tail = node;
-        } else {
-            tail.next = node;
-            node.pre = tail;
-            tail = node;
+        tail--;
+        if (tail == -1) {
+            tail = items.length - 1;
         }
+        items[tail] = value;
         size++;
         return true;
     }
@@ -72,14 +54,10 @@ class MyCircularDeque {
             return false;
         }
         size--;
-        if (size == 0) {
-            head = null;
-            tail = null;
-            return true;
+        head--;
+        if (head == -1) {
+            head = items.length - 1;
         }
-        head.next.pre = null;
-        head = head.next;
-
         return true;
     }
 
@@ -91,14 +69,10 @@ class MyCircularDeque {
             return false;
         }
         size--;
-        if (size == 0) {
-            head = null;
-            tail = null;
-            return true;
+        tail++;
+        if (tail == items.length) {
+            tail = 0;
         }
-        tail.pre.next = null;
-        tail = tail.pre;
-
         return true;
     }
 
@@ -109,7 +83,7 @@ class MyCircularDeque {
         if (isEmpty()) {
             return -1;
         } else {
-            return head.val;
+            return items[head];
         }
     }
 
@@ -120,7 +94,7 @@ class MyCircularDeque {
         if (isEmpty()) {
             return -1;
         } else {
-            return tail.val;
+            return items[tail];
         }
     }
 
