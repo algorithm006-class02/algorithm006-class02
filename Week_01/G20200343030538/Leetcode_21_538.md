@@ -82,30 +82,30 @@ public:
 
 void print_listnode(ListNode *node)
 {
-	while(node!=NULL)
-	{
-		cout<<node->val<<endl;
-		node=node->next;
-	}
+    while(node!=NULL)
+    {
+        cout<<node->val<<endl;
+        node=node->next;
+    }
 }
 
 int main(int argc, const char * argv[])
 {
-	Solution s;
-	ListNode a(1);
-	ListNode b(2);
-	ListNode c(4);
+    Solution s;
+    ListNode a(1);
+    ListNode b(2);
+    ListNode c(4);
     a.next = &b;
-	b.next = &c;
+    b.next = &c;
 
-	ListNode d(1);
-	ListNode e(3);
-	ListNode f(4);
-	d.next = &e;
-	e.next = &f;
+    ListNode d(1);
+    ListNode e(3);
+    ListNode f(4);
+    d.next = &e;
+    e.next = &f;
 
     ListNode *result = s.mergeTwoLists(&a,&d);
     print_listnode(result);
-	return 0;
+    return 0;
 }
 ```
