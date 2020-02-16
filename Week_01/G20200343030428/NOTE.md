@@ -1,5 +1,5 @@
 # 【428-week 01】学习总结
-![总结](https://github.com/EncodedStar/algorithm006-class02/blob/master/Week_01/G20200343030428/%E7%AC%AC%E4%B8%80%E5%91%A8.png "总结")
+
 ## 数组
 Array | -
 -------- | ---
