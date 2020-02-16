@@ -22,7 +22,7 @@ import java.util.Map;
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/two-sum
  */
-public class TwoSum {
+public class Leetcode_1_566 {
     /**
      * 暴力枚举的方式
      *

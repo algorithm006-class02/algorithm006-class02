@@ -7,7 +7,7 @@ import java.util.Stack;
  * @Date 2020/2/13
  * @Description
  */
-public class ReverseLinkedList {
+public class Leetcode_206_566 {
     public static void main(String[] args) {
         ListNode oneNode = new ListNode(1);
         ListNode twoNode = new ListNode(2);
@@ -21,7 +21,7 @@ public class ReverseLinkedList {
         fourNode.next = fifthNode;
         fifthNode.next = null;
 
-        ReverseLinkedList solutionOne = new ReverseLinkedList();
+        Leetcode_206_566 solutionOne = new Leetcode_206_566();
 //        ListNode listNode = solutionOne.reverseList(oneNode);
 //        ListNode listNode2 = solutionOne.solutionTwo(oneNode);
 //        ListNode listNode2 = solutionOne.recursiveSolution(oneNode);

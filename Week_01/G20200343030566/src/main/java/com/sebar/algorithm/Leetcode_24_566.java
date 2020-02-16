@@ -21,7 +21,7 @@ import java.util.List;
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/swap-nodes-in-pairs
  */
-public class SwapPairs24 {
+public class Leetcode_24_566 {
 
     /**
      * 采用分组的形式进行倒过来

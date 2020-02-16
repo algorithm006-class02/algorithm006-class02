@@ -17,7 +17,7 @@ package com.sebar.algorithm;
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/move-zeroes
  */
-public class MoveZeros {
+public class Leetcode_283_566 {
     /**
      * 移动zero 解决方案一
      *
@@ -106,7 +106,7 @@ public class MoveZeros {
 
 
     public static void main(String[] args) {
-        MoveZeros zeros = new MoveZeros();
+        Leetcode_283_566 zeros = new Leetcode_283_566();
         int[] ints = zeros.solutionTwo(new int[]{1, 2, 0, 3, 0});
         for (int i = 0; i < ints.length; i++) {
             System.out.print(ints[i]);

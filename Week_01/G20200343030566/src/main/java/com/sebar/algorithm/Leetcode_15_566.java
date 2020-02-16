@@ -28,7 +28,7 @@ import java.util.List;
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/3sum
  */
-public class ThreeSum {
+public class Leetcode_15_566 {
     public List<List<Integer>> solutionOne(int[] nums) {
         List<List<Integer>> resList = new ArrayList<List<Integer>>();
         // 少于三个直接返回空

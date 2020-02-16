@@ -12,7 +12,7 @@ package com.sebar.algorithm;
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/container-with-most-water
  */
-public class MaxAreas {
+public class Leetcode_11_566 {
     /**
      * 解决方法一
      * 暴力穷举，试探每一种组合形成的矩形面积
