@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int year,month,day;
+	char a,c;
+	int yearboom, monthboom, dayboom;
+	int b = 0, cnt = 0;//炸弹变量，爆炸天数
+	int months[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+	cout << "请输入年月日以yyyy-mm-dd的" << endl;
+	cin >> year>> a >>month>>c>>day;
+	while (a!=c&&c!='-')
+	{
+		cout << "输入错误请重新输入";
+		cin >> year >> a >> month >> c >> day;
+	}
+	for (int yearname = year; yearname < 3000; yearname++)
+	{
+		if (year % 4 == 0 && year % 100 != 0 || year % 400==0)
+		{
+			months[1] = 29;
+		}
+		else
+		{
+			months[1] = 28;
+		}
+		for (int i = 0; i < 12;i++)
+		{
+			for (int j = 0; j < months[i];j++)
+			{
+				if (yearname==year&&b==0)
+				{
+					i = month-1;
+					j = day-1;
+					b++;
+				}
+				cnt++;
+				if (cnt==1000)
+				{
+					dayboom = j+1;
+					break;
+				}
+			}
+			if (cnt == 1000)
+			{
+				monthboom = i+1;
+				break;
+			}
+		}
+		if (cnt == 1000)
+		{
+			yearboom = yearname;
+			break;
+		}
+	}
+	cout << yearboom <<"-"<< monthboom<< "-" << dayboom;
+
+	cin.get(); cin.get();
+	return 0;
+}

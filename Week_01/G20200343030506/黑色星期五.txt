@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int year, m = 0, count = 0;
+	int week[7] = { 4, 5, 6, 7, 1, 2, 3 };//星期多少
+	cin >> year;
+	while (year < 1998)
+	{
+		printf("输入错误请重新输入：");
+		cin >> year;
+	}
+	int month[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+	int monthday[12][31] = { 0 };//每天是周几
+	int yearname = 1998, k = 0, j;
+	for (int yearname = 1998; yearname <= year; yearname++)
+	{
+		count = 0;
+		if (yearname % 4 == 0 && yearname % 100 != 0 || yearname % 400 == 0)
+		{
+			month[1] = 29;
+		}
+		else
+		{
+			month[1] = 28;
+		}
+		for (int i = 0; i < 12; i++)
+		{
+			for (j = 0; j < month[i]; j++)
+			{
+				monthday[i][j] = week[k];
+				k++;
+				if (k == 7)
+				{
+					k = 0;
+				}
+				if (j == 12 && monthday[i][j] == 5)
+				{
+					count++;
+				}
+			}
+		}
+	}
+	cout << count;
+	cin.get(); cin.get();
+	return 0;
+}
