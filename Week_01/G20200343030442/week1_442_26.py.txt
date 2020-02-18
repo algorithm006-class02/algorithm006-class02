@@ -1,0 +1,23 @@
+# --*--coding:utf-8--*--
+
+def removeDuplicates01(nums):
+    if len(nums) == 0:
+        print(nums)
+        return 0
+    j = 0
+    for i in range(len(nums)):
+        if nums[i] != nums[j]:
+            j += 1
+            nums[j] = nums[i]
+    print(nums)
+    return j + 1
+a1 = [1,1]
+a2 = [1,2,2,3,4,5,5,5,5,5,7]
+a3 = [0,0,1,1,1,2,2,3,3,4]
+a4 = [1]
+a5 = []
+print(removeDuplicates01(a1))
+print(removeDuplicates01(a2))
+print(removeDuplicates01(a3))
+print(removeDuplicates01(a4))
+print(removeDuplicates01(a5))
