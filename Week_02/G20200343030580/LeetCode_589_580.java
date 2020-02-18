@@ -4,16 +4,15 @@ class Solution {
         if (root == null) {
             return result;
         }
-        preorder(root, result);
-        return result;
-    }
-
-    private void preorder(Node root, List<Integer> list) {
-        list.add(root.val);
-        if (root.children != null) {
-            for (Node node : root.children) {
-                preorder(node, list);
+        Stack<Node> stack = new Stack<>();
+        stack.push(root);
+        while (stack.isEmpty() == false) {
+            Node node = stack.pop();
+            result.add(node.val);
+            for (int i = node.children.size() - 1; i > -1; i--) {
+                stack.add(node.children.get(i));
             }
         }
+        return result;
     }
 }
