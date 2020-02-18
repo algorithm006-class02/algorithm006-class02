@@ -40,3 +40,41 @@ public:
 		return s == t;
 	}
 };
+
+//26长度的数组hash
+class Solution {
+public:
+	bool isAnagram(std::string s, std::string t) {
+		if (s.length() != t.length()) return false;
+		const char base = 'a';
+		int counter[26] = {0};
+		for (auto&a : s){
+			counter[a - base]++;
+		}
+		for (auto&a : t){
+			counter[a - base]--;
+		}
+		for (int i = 0; i < 26; i++){
+			if (counter[i] != 0) return false;
+		}
+		return true;
+	}
+};
+
+//小于0直接return false固然没错 但是否有漏掉的情况，怎么解释
+class Solution {
+public:
+	bool isAnagram(std::string s, std::string t) {
+		if (s.length() != t.length()) return false;
+		const char base = 'a';
+		int counter[26] = { 0 };
+		for (auto&a : s){
+			counter[a - base]++;
+		}
+		for (auto&a : t){
+			counter[a - base]--;
+			if (counter[a - base] < 0) return false;
+		}
+		return true;
+	}
+};
