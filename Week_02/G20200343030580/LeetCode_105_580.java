@@ -12,14 +12,14 @@ class Solution {
             return root;
         }
         TreeNode root = new TreeNode(preorder[fpoi]);
-        int rootIndexInorder = indexOf(inorder, fioi, lioi, root.val);
-        int leftLength = rootIndexInorder - fioi;
-        int rightLength = lioi - rootIndexInorder;
-        if (leftLength > 0) {
-            root.left = buildTree(preorder, fpoi + 1, fpoi + leftLength, inorder, fioi, fioi + leftLength - 1);
+        int rioi = indexOf(inorder, fioi, lioi, root.val);
+        int lsl = rioi - fioi;//左子树的长度
+        int rsl = lioi - rioi;//右子树的长度
+        if (lsl > 0) {
+            root.left = buildTree(preorder, fpoi + 1, fpoi + lsl, inorder, fioi, fioi + lsl - 1);
         }
-        if (rightLength > 0) {
-            root.right = buildTree(preorder, fpoi + leftLength + 1, fpoi + leftLength + rightLength, inorder, rootIndexInorder + 1, rootIndexInorder + rightLength);
+        if (rsl > 0) {
+            root.right = buildTree(preorder, fpoi + lsl + 1, fpoi + lsl + rsl, inorder, rioi + 1, rioi + rsl);
         }
         return root;
 
