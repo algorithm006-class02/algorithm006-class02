@@ -1,5 +1,9 @@
 ### Python Set && Dict(Map)
 
+[Source Code set](https://github.com/python/cpython/blob/2.7/Lib/sets.py)
+[Source Code Dict](https://github.com/python/cpython/blob/2.7/Lib/UserDict.py)
+
+
 [Set Objects](https://docs.python.org/2/library/sets.html)
 
 具体支持方法为：
