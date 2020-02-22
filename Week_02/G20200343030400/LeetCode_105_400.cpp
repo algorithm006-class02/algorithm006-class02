@@ -19,9 +19,9 @@ public:
         if (inStart == inEnd)
             return NULL;
         TreeNode* root = new TreeNode(preorder[preStart]);
-        int idxRoot = idxInorder[preorder[preStart]] - inStart;
-        root->left = buildHelper(preorder, preStart + 1, inorder, inStart, inStart + idxRoot, idxInorder);
-        root->right = buildHelper(preorder, preStart + 1 + idxRoot, inorder, inStart + idxRoot + 1, inEnd, idxInorder);
+        int idxRoot = idxInorder[root->val];
+        root->left = buildHelper(preorder, preStart + 1, inorder, inStart, idxRoot, idxInorder);
+        root->right = buildHelper(preorder, preStart + 1 + idxRoot - inStart, inorder, idxRoot + 1, inEnd, idxInorder);
         return root;
     }
 
