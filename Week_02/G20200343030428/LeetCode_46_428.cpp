@@ -17,21 +17,24 @@ public:
     //     return ret;
     // }
 
-    void helper (vector<vector<int>>& res, vector<int> nums, int cur) {
+    // 全排列模板
+    void backtrack (vector<vector<int>>& result, vector<int> nums, int cur) {
+        // 次数结束，交换过的所有数
         if (cur == nums.size())
-            res.push_back(nums);
+            result.push_back(nums);
 
+        // 从0开始到最后，每个数字保证俩俩交换过
         for (int i = cur; i < nums.size(); ++i) {
             swap(nums[cur],nums[i]);
-            helper(res,nums,cur + 1);
+            backtrack(result,nums,cur + 1);
         }
     }
-    
+
+    // 入口函数
     vector<vector<int>> permute(vector<int>& nums) {
-        vector<vector<int>> res;
-        sort(nums.begin(),nums.end());
-        helper(res, nums, 0);
-        return res;
+        vector<vector<int>> result;
+        backtrack(result, nums, 0);
+        return result;
     }
 };
 // @lc code=end

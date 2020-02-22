@@ -9,6 +9,7 @@
  * };
  */
 
+// C++ 典型前序遍历模板
 class Solution {
 private:
     vector<int> TraversalVal;

@@ -11,6 +11,8 @@ public:
         if (cur == nums.size())
             res.push_back(nums);
 
+        // 俩俩交换
+        // 去重：1.不延续自己， 2.保证有效交换
         for (int i = cur; i < nums.size(); ++i) {
             if (cur == i || nums[cur] != nums[i]) {
                 swap(nums[cur],nums[i]);
@@ -18,7 +20,7 @@ public:
             }
         }
     }
-
+    // 入口函数
     vector<vector<int>> permuteUnique(vector<int>& nums) {
         vector<vector<int>> res;
         sort(nums.begin(),nums.end());

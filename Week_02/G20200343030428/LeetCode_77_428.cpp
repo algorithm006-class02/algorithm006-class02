@@ -10,6 +10,7 @@ class Solution {
 private:
     vector<vector<int>> result;
 public:
+    // 入口函数
     vector<vector<int>> combine(int n, int k) {
         if(k <= 0||n <= 0)  //起始条件有误直接return
             return result;

@@ -14,7 +14,10 @@ public:
         unordered_map<string,int> work; //string 记录排序后的word, int记录sub
         for (auto str: strs) {
             tmp = str;
+            // 排序很重要，保证键一致
             sort(tmp.begin(), tmp.end());
+            // 如果键存在就插入已经存在的vector
+            // 如果不存在就插入新的vector
             if (work.count(tmp)) {
                 result[work[tmp]].push_back(str);
             }

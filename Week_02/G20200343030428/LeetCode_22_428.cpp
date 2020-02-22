@@ -9,15 +9,19 @@ class Solution {
 private:
     vector<string> result;
 public:
-    void _generate(int left, int right, int n, string s) {
+    void backtrack(int left, int right, int n, string s) {
+        // 退出条件 => 左括号数 == 右括号数 == n
         if (left == n && right == n) {
             result.push_back(s);
         }
-        if (left < n) _generate(left + 1, right, n, s + "(");
-        if (right < left) _generate(left, right + 1, n, s + ")");
+        // 1. 左括号小于n 递归，每次+1 保证最后一次为n 
+        if (left < n) backtrack(left + 1, right, n, s + "(");
+        // 2. 右括号小于n 并且 小于左括号 保证最后一次等于左括号
+        if (right < left) backtrack(left, right + 1, n, s + ")");
     }
+    // 入口函数
     vector<string> generateParenthesis(int n) {
-        _generate(0, 0, n, "");
+        backtrack(0, 0, n, "");
         return result;
     }
 };

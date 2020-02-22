@@ -8,6 +8,8 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
+// C++ 典型后序遍历模板
 class Solution {
 private:
     vector<int> TraversalVal;

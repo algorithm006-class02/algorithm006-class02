@@ -21,12 +21,14 @@ public:
 class Solution {
 private:
     vector<int> result;
+    
 public:
     vector<int> preorder(Node* root, vector<int>& result) {
         result.push_back(root->val);
         for(auto node: root->children)
             preorder(root, result);
     }
+
     vector<int> preorder(Node* root) {
         if (!root) return result;
         preorder(root,result);
