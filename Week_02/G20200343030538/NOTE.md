@@ -43,6 +43,7 @@
  - 前序遍历  
  - 中序遍历  
  - 后序遍历  
+
 其中，前、中、后序，表示的是节点与它的左右子树节点遍历打印的先后顺序。  
 ![binary_tree traversal](https://github.com/HinataHoshino/algorithm006-class02/blob/master/Week_02/G20200343030538/image/binary_tree_traversal.jpg)  
 
