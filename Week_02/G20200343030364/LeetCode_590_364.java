@@ -19,7 +19,6 @@ public class LeetCode_590_364 {
       while (!stack.isEmpty()) {
         Node node = stack.pollLast();
         output.addFirst(node.val);
-        System.out.println(node.val);
         for (Node item : node.children) {
           if (item != null) {
             stack.add(item);
