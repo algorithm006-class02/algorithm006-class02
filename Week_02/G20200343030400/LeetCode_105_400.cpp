@@ -10,15 +10,18 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
+/*preorder的第一位是根节点值，只有这个有用*/
+
 class Solution {
 public:
-    TreeNode* buildHelper(vector<int>& preorder, int preStart, int preEnd, vector<int>& inorder, int inStart, int inEnd, unordered_map<int, int>& idxInorder) {
-        if (preStart == preEnd)
+    TreeNode* buildHelper(vector<int>& preorder, int preStart, vector<int>& inorder, int inStart, int inEnd, unordered_map<int, int>& idxInorder) {
+        if (inStart == inEnd)
             return NULL;
         TreeNode* root = new TreeNode(preorder[preStart]);
         int idxRoot = idxInorder[preorder[preStart]] - inStart;
-        root->left = buildHelper(preorder, preStart + 1, preStart + 1 + idxRoot, inorder, inStart, inStart + idxRoot, idxInorder);
-        root->right = buildHelper(preorder, preStart + 1 + idxRoot, preEnd, inorder, inStart + idxRoot + 1, inEnd, idxInorder);
+        root->left = buildHelper(preorder, preStart + 1, inorder, inStart, inStart + idxRoot, idxInorder);
+        root->right = buildHelper(preorder, preStart + 1 + idxRoot, inorder, inStart + idxRoot + 1, inEnd, idxInorder);
         return root;
     }
 
@@ -27,6 +30,6 @@ public:
         for (int i = 0; i < inorder.size(); ++i) {
             idxInorder[inorder[i]] = i;
         }
-        return buildHelper(preorder, 0, preorder.size(), inorder, 0, inorder.size(), idxInorder);
+        return buildHelper(preorder, 0, inorder, 0, inorder.size(), idxInorder);
     }
 };
