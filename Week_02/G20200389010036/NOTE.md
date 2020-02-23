@@ -36,4 +36,13 @@ IndexError: list index out of range
 
 s.pop([i])
 he optional argument i defaults to -1, so that by default the last item is removed and returned.
+
+递归函数最后一层不执行返回None
+>>> def test(a):
+...     if a < 0:
+...             return a
+...
+>>> print(test(1))
+None
+
 ```
