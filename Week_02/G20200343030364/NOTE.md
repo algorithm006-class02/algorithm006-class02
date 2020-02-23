@@ -1,29 +1,31 @@
-学习笔记
+Note: 
 
-简单：
+# Java HashMap summary
 
-写一个关于 HashMap 的小总结。
+- HashMap is not synchronized.
 
-说明：对于不熟悉 Java 语言的同学，此项作业可选做。
+- Permits null values and null key.
 
-https://leetcode-cn.com/problems/n-ary-tree-postorder-traversal/
+- The HashMap class is roughly equivalent to Hashtable, 
+except that it is unsynchronized and permits null.
 
-https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/description/
+- iteration: all buckets and its size(the number of key-value mappings) (!!!capacity not too high or load factor too low)
 
-中等：
+- default load factor: 0.75 (offers good trade off between time and space cost)
 
-https://leetcode-cn.com/problems/group-anagrams/
+- When the number of entries in the hash table exceeds the product of the load factor and the current capacity, the hash table is rehashed 
+ (that is, internal data structures are rebuilt) so that the hash table has approximately twice the number of buckets.
 
-https://leetcode-cn.com/problems/binary-tree-preorder-traversal/
+- too many mappings are to be stored in HashMap instance, create HasHMap with a large 
+capacity, because automatic rehashing takes time. 
 
-https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/
+- And if there are too many keys with the same `hashCode()`, making these keys `Comparable` 
+helps break ties.
 
-https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/
+- Synchronized HashMap:
 
-https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+`Map m = Collections.synchronizedMap(new HashMap(...))`
 
-https://leetcode-cn.com/problems/combinations/
+- `clone` return a shallow copy of this Map
 
-https://leetcode-cn.com/problems/permutations/
-
-https://leetcode-cn.com/problems/permutations-ii/
+- `treeifyBin` the number of linked nodes in a bin is larger than specified threshold, the treeify the bin
