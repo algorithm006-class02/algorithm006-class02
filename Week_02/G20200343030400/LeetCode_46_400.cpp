@@ -3,22 +3,22 @@
 
 class Solution {
 public:
-    void helper(vector<int>& nums, int idx, vector<vector<int>>& res) {
-        if (idx >= nums.size()) {
+    void dfs(vector<int>& nums, int begin, vector<vector<int>>& res) {
+        if (begin == nums.size() - 1 || nums.size() == 0) {
             res.push_back(nums);
             return;
         }
-        for (int i = idx; i < nums.size(); ++i) {
-            swap(nums[idx], nums[i]);
-            helper(nums, idx + 1, res);
-            swap(nums[idx], nums[i]);
+        for (int i = begin; i < nums.size(); ++i) {
+            swap(nums[begin], nums[i]);
+            dfs(nums, begin + 1, res);
+            swap(nums[begin], nums[i]);
         }
         return;
     }
-    
+
     vector<vector<int>> permute(vector<int>& nums) {
         vector<vector<int>> res;
-        helper(nums, 0, res);
+        dfs(nums, 0, res);
         return res;
     }
 };
