@@ -66,3 +66,19 @@ class Solution{
 }
 
 ```
+
+## 广度优先搜索
+```python
+def levelOrder(self,root:'node'):
+    if root is None：return []
+    res = []
+    pre_level = [root]
+    while pre_level:
+        cur_level = []
+        res.append([])
+        for ele in pre_level:
+            res[-1].append(ele.val)
+            cur_level.extends(ele.children)
+        pre_level = cur_level
+    return res
+```
