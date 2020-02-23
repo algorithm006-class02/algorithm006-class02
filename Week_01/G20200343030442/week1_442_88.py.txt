@@ -1,0 +1,91 @@
+#--*--coding:utf-8--*--
+#88.合并两个数组
+#思路：把第二个数据直接添加到第一个数组后面，然后再对第一个数组进行排序
+
+def merge1(nums1, m ,nums2, n):
+    if len(nums2) == 0:
+        return nums1
+    for i in range(len(nums2)):
+        nums1[len(nums1) - len(nums2) + i] = nums2[i]
+    nums1.sort()
+    return nums1
+
+def merge2(nums1, m ,nums2, n):  #性能比上面更差
+    nums1[:] = nums1[0:m:] + nums2[:]
+    nums1.sort()
+    return nums1
+
+nums1 = [1,2,3,0,0,0]
+nums2 = [2,5,6]
+m = 3
+n = 2
+print(merge1(nums1, m, nums2, n))
+
+nums1 = [1,2,3,0,0,0]
+nums2 = [2,5,6]
+m = 3
+n = 2
+print(merge2(nums1, m, nums2, n))
+
+
+
+
+
+#--*--coding:utf-8--*--
+def merge(nums1, m ,nums2, n):
+    if n == 0:
+        return nums1[:m + n :]
+    if m == 0:
+        nums1[:] = nums2[:]
+        return nums1
+    end1 = m - 1
+    end2 = n - 1
+    end = m + n - 1
+    while end1 >= 0 and end2 >=0 :  #循环终止条件
+        if nums1[end1] >= nums2[end2]:
+            nums1[end] = nums1[end1]
+            end1 -= 1
+        else :
+            nums1[end] = nums2[end2]
+            end2 -= 1
+        end -= 1
+    nums1[0:end2 + 1] = nums2[0:end2 + 1]  # 把nums2中剩余的数据直接转移到nums1中
+    return nums1[:m + n :]
+
+nums1 = [2,0]
+nums2 = [1]
+m = 1
+n = 1
+print(merge(nums1, m, nums2, n))
+
+nums1 = []
+nums2 = [1]
+m = 0
+n = 1
+print(merge(nums1, m, nums2, n))
+
+nums1 = [8,9,0,0,0,0]
+nums2 = [1,2,3,4]
+m = 2
+n = 4
+print(merge(nums1, m, nums2, n))
+
+nums1 = [8,9,0,0,0,0]
+nums2 = []
+m = 2
+n = 0
+print(merge(nums1, m, nums2, n))
+
+nums1 = [1,2,3,0,0,0]
+nums2 = [2,5,6]
+m = 3
+n = 3
+print(merge(nums1, m, nums2, n))
+
+
+
+
+
+
+
+
