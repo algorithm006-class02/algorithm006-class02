@@ -143,3 +143,41 @@ Stack简单，就不写了
 * 重复单元：遍历树的每一个节点
 * 时间复杂度：O(n)
 * 空间复杂度：O(1)
+
+### 使用队列完成层序遍历
+
+
+## 组合
+### 回溯解法
+过程： 遍历，添加，递归，回退
+```java
+class Solution {
+
+  private int k;
+  private int n;
+  private List<List<Integer>> output;
+  
+  public List<List<Integer>> combine(int n, int k) {
+      this.k = k;
+      this.output = new ArrayList<List<Integer>>();
+      helper(1, n + 1, new LinkedList<Integer>());
+
+      return output;
+  }
+
+  public void helper(int start, int end, LinkedList<Integer> curr){
+      if (curr.size() ==  k){
+          output.add(new ArrayList<Integer>(curr));
+          return;
+      }
+
+      for (int i = start; i < end; i++){
+          curr.add(i);
+          helper(i + 1, end, curr);
+          curr.removeLast();
+      }
+
+  }
+
+}
+```
