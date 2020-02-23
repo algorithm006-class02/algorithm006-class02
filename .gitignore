@@ -1,0 +1,45 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+target
+.vscode
+.settings
+.project
+.factorypath
+.classpath
+.idea
+.idea/compiler.xml
+.idea/encodings.xml
+.idea/inspectionProfiles/
+.idea/libraries/
+.idea/loyalty-service.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/uiDesigner.xml
+.idea/vcs.xml
+.idea/workspace.xml
+/loyalty-service.iml
+/DocumentDB.Spatial.Sql.dll
+/Microsoft.Azure.Documents.ServiceInterop.dll
+.DS_Store
