@@ -6,7 +6,7 @@ class Solution {
         int total = 1;
         for (int i = 1; i < nums.length; i ++) {
             if(nums[i] != nums[i -1]){
-                nums[total ++] = nums[i];
+                nums[total ++] = nums[i]; //  not only return nums but also need to remove dupicate
             }
         }
         return total;

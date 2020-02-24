@@ -1,0 +1,15 @@
+#wee2_442_49.py
+#--*--coding:utf-8--**--
+from collections import defaultdict
+class Solution(object):
+    def groupAnagrams(self, strs):
+        ans = defaultdict(list)  # 建立映射关系：K 是一个排序字符串sorted(s)，
+        for s in strs:
+            ans[tuple(sorted(s))].append(s)  # 添加value ，即修改Value 值
+        return ans.values()
+
+
+a = ["eatt", "tea", "tan", "ate", "nat", "bat"]
+
+p = Solution()
+print(p.groupAnagrams(a))
