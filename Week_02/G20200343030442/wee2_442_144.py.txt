@@ -1,0 +1,45 @@
+#wee2_442_144.py
+# --*--coding:utf-8--*--
+class TreeNode:
+    def __init__(self,val):
+        self.val = val
+        self.left = None
+        self.right = None
+        return
+
+class Solution:
+    def __init__(self):
+        self.traverse_path = []
+
+    def preorderTraversal(self,root):
+        self.preorder(root)
+        return self.traverse_path
+
+    def preorder(self,root):
+        if root:
+            self.traverse_path.append(root.val)
+            self.preorder(root.left)
+            self.preorder(root.right)
+
+
+
+# a = [1,None,2,3]
+#
+# right_tree = TreeNode(a[2])
+# right_tree.left = TreeNode(a[3])
+#
+# atree = TreeNode(a[0])
+# atree.right = right_tree
+
+a = ['',4,2,1,3,7,6,9]
+
+for i in range(1,len(a) - 2):
+    p = TreeNode(a[i])
+    p = p.left
+    p = TreeNode(a[i + 1])
+    p = p.right
+    p = TreeNode(a[i + 1])
+
+atree = p
+m = Solution()
+print(m.preorderTraversal(atree))
