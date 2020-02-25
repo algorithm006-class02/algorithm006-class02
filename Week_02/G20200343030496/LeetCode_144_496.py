@@ -8,10 +8,6 @@ class TreeNode:
 
 class Solution:
     def preorderTraversal(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[int]
-        """
         if root is None:
             return []
 

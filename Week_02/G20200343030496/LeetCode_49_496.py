@@ -1,7 +1,7 @@
 
 import collections
 
-class Solution(object):
+class Solution:
     def groupAnagrams(self, strs):
         ans = collections.defaultdict(list)
         for s in strs:
