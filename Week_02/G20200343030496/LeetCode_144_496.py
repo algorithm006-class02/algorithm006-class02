@@ -1,4 +1,4 @@
-class TreeNode(object):
+class TreeNode:
     """ Definition of a binary tree node."""
     def __init__(self, x):
         self.val = x
@@ -6,7 +6,7 @@ class TreeNode(object):
         self.right = None
 
 
-class Solution(object):
+class Solution:
     def preorderTraversal(self, root):
         """
         :type root: TreeNode
