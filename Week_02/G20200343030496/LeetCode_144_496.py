@@ -7,6 +7,7 @@ class TreeNode:
 
 
 class Solution:
+    
     def preorderTraversal(self, root):
         if root is None:
             return []
