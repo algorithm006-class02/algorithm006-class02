@@ -27,6 +27,8 @@
 
 DFS代码模板
 
+对图来说，需要记录visited；对树不需要记录visited。
+
 DFS递归写法一：
 
     visited = set()
@@ -80,9 +82,12 @@ DFS手动栈：
         
  5，广度优先搜素 Breadth First Search
  
+ 对图来说，需要记录visited；对树不需要记录visited。
+ 
  BFS代码模板：使用队列数据结构，具体可用数组、queue、deque
  
     def bfs(graph, start, end):
+    
         visited = set()
         queue = []
         queue.append([start])   # 初始节点首先入队
