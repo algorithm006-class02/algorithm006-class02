@@ -9,6 +9,11 @@ class TreeNode:
 class Solution:
     
     def preorderTraversal(self, root):
+        """
+
+        :param root:
+        :return:
+        """
         if root is None:
             return []
 
