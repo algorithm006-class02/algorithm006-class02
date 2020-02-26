@@ -83,10 +83,9 @@ DFS手动栈：
  BFS代码模板：使用队列数据结构，具体可用数组、queue、deque
  
     def bfs(graph, start, end):
-
+        visited = set()
         queue = []
         queue.append([start])   # 初始节点首先入队
-        visited.add(start)
         
         while queue:             # 只要队列不空，就一直扫描
             node = queue.pop()
