@@ -34,10 +34,8 @@ DFS递归写法一：
     visited = set()
     
     def dfs(node, visited):
-        if node in visited:  # terminator
-            # already visited
-            return;
-            
+        terminator
+                       
         visited.add(node)
         
         # process current node here
@@ -51,6 +49,8 @@ DFS递归写法二：
     visited = set()
     
     def dfs(node, visited):
+        terminator
+    
         visited.add(node)
         
         # process current node here
