@@ -29,7 +29,7 @@ DFS代码模板
 
 对图来说，需要记录visited；对树不需要记录visited。
 
-DFS递归写法一：
+DFS递归：
 
     visited = set()
     
@@ -43,22 +43,7 @@ DFS递归写法一：
         for next_node in node.children():
             if next_node not in visited:
                 dfs(next_node, visited)
-
-DFS递归写法二：
-
-    visited = set()
-    
-    def dfs(node, visited):
-        terminator
-    
-        visited.add(node)
-        
-        # process current node here
-        ...
-        for next_node in node.children():
-            if not next_node in visited:
-                dfs(next_node, visited)
-
+                
 
 DFS手动栈：
 
