@@ -4,7 +4,7 @@
 
 ### description
 input:
-collections{ people} each person need goto river  and spend time with person
+collections{ people} each person need go to river  and spend time with person
 only two with light a time,
 only one light
 
