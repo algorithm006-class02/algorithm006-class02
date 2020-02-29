@@ -20,10 +20,14 @@ public:
             return 0;
         }    
         grid[i][k] = '0';
-        if (i > 0) sink(grid, i - 1, k);
-        if (i < grid.size() - 1) sink(grid, i + 1, k);
-        if (k > 0) sink(grid, i, k - 1);
-        if (k < grid[0].size() -  1) sink(grid, i, k + 1);
+        if (i > 0)
+            sink(grid, i - 1, k);
+        if (i < grid.size() - 1) 
+            sink(grid, i + 1, k);
+        if (k > 0) 
+            sink(grid, i, k - 1);
+        if (k < grid[0].size() -  1) 
+            sink(grid, i, k + 1);
         return 1;
     }
 };
