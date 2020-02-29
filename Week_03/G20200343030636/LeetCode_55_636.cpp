@@ -38,7 +38,9 @@
 // @lc code=start
 class Solution {
 public:
-    
+    /*
+    解法一：每个位置pos从1到nums[pos]逐个验证是否能到达，该解法无法通过最长到case，会超时
+    */
     bool canJump(vector<int>& nums) {
         if ( nums.size() <= 0 ) return false ;
         unordered_map<int,bool> visited;
@@ -70,9 +72,46 @@ public:
         
         return false;
     }
-    
+	
+	/*
+	解法二,动态规划，从后往前判定，看是否能到位置0
+	*/
+	bool canJump(vector<int>& nums) {
+		vector<int> dp(nums.size());
+		dp[nums.size()-1] = 1 ;
+		//从倒数第二个位置判定能否调到终点
+		for(int i = nums.size() -2 ; i >= 0 ; i--) {
+			int jump = (i+nums[i]) < (nums.size()-1) ? i + nums[i] : nums.size() - 1;
+			//从位置i+1到位置jump ,如果有一个任意一个位置dp[j]=1的，说明d[i] = 1，即从位置i能调到一个位置j，而这个j能调到最后
+			for ( int j = i + 1 ; j <= jump ; ++ j) {
+				if(dp[j] == 1) {
+					dp[i] = 1;
+					break;
+				}
+			}
+		}
 
-        
+		return dp[0];
+	}
+
+	/*
+	解法三，高赞答案，每次都更新能到达的最大距离，贪心策略
+	12ms 74.08%
+	*/
+     bool canJump(vector<int>& nums) {
+		 int reach = 0 ;
+		 //i+nums[i]表示从位置i~i+nums[i]都是可达的，那么只需要看i~i+nums[i]中的每个位置能到达的最远的位置即可
+		 for(int i = 0 ; i < nums.size() ;++i ) {
+			 //能到达的位置小于位置i，说明存在0
+			 if ( reach < i ) return false ;
+			 reach = max ( reach,i + nums[i] ) ;
+			 if ( reach >= nums.size()-1 ) return true ;
+		 }
+
+		 return false ;
+         
+    }
+
 };
 // @lc code=end
 
