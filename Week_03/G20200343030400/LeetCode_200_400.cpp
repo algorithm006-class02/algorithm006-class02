@@ -16,14 +16,14 @@ public:
     }
 
     int sink(vector<vector<char>>& grid, int i, int k) {
-        if (i == -1 || i == grid.size() || k == -1 || k == grid[0].size() || '0' == grid[i][k]) {
+        if ('0' == grid[i][k]) {
             return 0;
         }    
         grid[i][k] = '0';
-        sink(grid, i - 1, k);
-        sink(grid, i + 1, k);
-        sink(grid, i, k - 1);
-        sink(grid, i, k + 1);
+        if (i > 0) sink(grid, i - 1, k);
+        if (i < grid.size() - 1) sink(grid, i + 1, k);
+        if (k > 0) sink(grid, i, k - 1);
+        if (k < grid[0].size() -  1) sink(grid, i, k + 1);
         return 1;
     }
 };
