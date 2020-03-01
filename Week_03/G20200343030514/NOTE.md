@@ -1,1 +1,2 @@
 学习笔记
+In this week, I have solved No.74 and NO.54 as my homework. Luckily, according to the tips from the teacher, I can find the solution independently. However, compared with the offical answers, they can not be considered as brief implementations. There are some tricky ways in the offical solutions, such as using '%' and '/' to convert the index from 2D to 1D, just want to know how to practise these skills?
