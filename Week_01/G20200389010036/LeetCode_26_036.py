@@ -1,4 +1,5 @@
 # https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/submissions/
+
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         if len(nums) == 0 : return 0
