@@ -68,3 +68,14 @@ https://github.com/python/cpython/blob/3.8/Lib/queue.py
 + https://leetcode-cn.com/problems/two-sum/
 + https://leetcode-cn.com/problems/move-zeroes/
 + https://leetcode-cn.com/problems/plus-one/
+
+
+
+### 递归问题
+要点： 
++ 递归算法必须具备基本结束条件
++ 递归算法要减小规模，改变状态，向基本的结束条件进行演进
++ 递归算法必须要调用自己
+
+
+
