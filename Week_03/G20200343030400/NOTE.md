@@ -108,7 +108,7 @@ DFS手动栈：
 
 	left, right = 0, len(array) - 1 
 	while left <= right: 
-		mid = (left + right) / 2 
+		mid = left + (right - left) / 2 
 		if array[mid] == target: 
 			# find the target!! 
 			break or return result 
