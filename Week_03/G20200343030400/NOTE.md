@@ -107,6 +107,7 @@ DFS手动栈：
 二分查找模板
 
 	left, right = 0, len(array) - 1 
+	# [left, right] 左闭右闭区间
 	while left <= right: 
 		mid = left + (right - left) / 2 
 		if array[mid] == target: 
