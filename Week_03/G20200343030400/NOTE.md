@@ -96,4 +96,24 @@ DFS手动栈：
     回溯：能够回退，扫描全局最优解
     动态规划：最优判断+回退
     
+7，二分查找
+
+时间复杂度O(logN)
+
+    1，目标函数有单调性（可以放宽为半单调，移动区间边界时考虑两端边界情况）
+    2，存在上下界
+    3，能够通过索引访问
+
+二分查找模板
+
+    left, right = 0, len(array) - 1 
+    while left <= right: 
+	  mid = (left + right) / 2 
+	  if array[mid] == target: 
+		    # find the target!! 
+		    break or return result 
+	  elif array[mid] < target: 
+		    left = mid + 1 
+	  else: 
+	        right = mid - 1
 
