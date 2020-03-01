@@ -14,10 +14,8 @@ class Solution {
                 return digits;
             }
         }
-        if(digits[0] == 0){
-            digits = new int[digits.length];
-            digits[0] = 1;
-        }
+        digits = new int[digits.length + 1];
+        digits[0] = 1;
         return digits;
     }
 }
