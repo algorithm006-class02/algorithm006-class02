@@ -95,7 +95,34 @@ public:
 	}
 
 	/*
-	解法三，高赞答案，每次都更新能到达的最大距离，贪心策略
+    解法三：DP，定义d[i]为能否到达位置i到结果，则d[i] 与 d[i-1]的关系是：(d[i-1] && nums[i-1] > 0) || (d[i-2] && nums[i-2] > 1) || (d[0] && nums[0] > i)
+     从头开始自下而上计算d[i]，
+	 12ms 74.08%
+    */    
+    
+    bool canJump(vector<int>& nums) {
+        if ( nums.size() <= 0 ) return false ;
+        //
+        vector<bool> dp(nums.size(),false);
+
+        //初始化dp
+        dp[0] = true ;
+        for( int i = 1; i < nums.size() ; ++i) {
+			//判断dp[i]时，从距离i最近的位置判定，只要找到一个满足条件即可。从0开始遍历，会从距离i最远的位置判定，可能要循环的次数更多
+            for( int j = i-1 ; j >= 0 ; -- j) {
+                dp[i] = dp[j] && (nums[j] >= i - j ) ;
+                //已经为true，不用继续探查路径
+                if(dp[i]) break;
+            }
+        }
+
+        return dp[nums.size()-1];
+
+        
+    }
+
+	/*
+	解法四，高赞答案，每次都更新能到达的最大距离，贪心策略
 	12ms 74.08%
 	*/
      bool canJump(vector<int>& nums) {
