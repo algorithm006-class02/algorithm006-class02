@@ -1,14 +1,16 @@
 学习笔记
 
 本周作业
+
 简单：
-https://leetcode-cn.com/problems/lemonade-change/description/
 
-https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/description/
+[v]https://leetcode-cn.com/problems/lemonade-change/description/
 
-https://leetcode-cn.com/problems/assign-cookies/description/
+[v]https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/description/
 
-https://leetcode-cn.com/problems/walking-robot-simulation/description/
+[v]https://leetcode-cn.com/problems/assign-cookies/description/
+
+[v]https://leetcode-cn.com/problems/walking-robot-simulation/description/
 
 使用二分查找，寻找一个半有序数组 [4, 5, 6, 7, 0, 1, 2] 中间无序的地方
 
@@ -22,7 +24,7 @@ https://leetcode-cn.com/problems/number-of-islands/
 
 https://leetcode-cn.com/problems/minesweeper/description/
 
-https://leetcode-cn.com/problems/jump-game/
+[v]https://leetcode-cn.com/problems/jump-game/
 
 https://leetcode-cn.com/problems/search-in-rotated-sorted-array/
 
@@ -34,7 +36,7 @@ https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/
 
 https://leetcode-cn.com/problems/word-ladder-ii/description/
 
-https://leetcode-cn.com/problems/jump-game-ii/
+[v]https://leetcode-cn.com/problems/jump-game-ii/
 
 
 贪心法：硬币问题，硬币能整除。 非整除【10，9，1】凑出18，用两个9.
