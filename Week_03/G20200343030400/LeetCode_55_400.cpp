@@ -12,6 +12,8 @@ public:
             curRange = max(curRange - 1, nums[i]);
             if (curRange == 0)
                 return false;
+            if (curRange >= numsSize - 1)
+                return true;
         }
         return (curRange > 0);
     }
