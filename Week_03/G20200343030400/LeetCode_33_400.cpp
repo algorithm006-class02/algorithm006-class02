@@ -10,10 +10,18 @@ public:
             int mid = left + (right - left) / 2;
             if (nums[mid] == target) {
                 return mid;
-            } else if ((nums[left] <= target && target < nums[mid]) || (nums[mid] < nums[left] && (nums[left] <= target || nums[mid] > target))) {
-                right = mid;
+            } else if (nums[left] <= nums[mid]) {
+                if (nums[left] <= target && nums[mid] > target) {
+                    right = mid;
+                } else {
+                    left = mid + 1;
+                }
             } else {
-                left = mid + 1;
+                if (nums[mid] < target && nums[left] > target) {
+                    left = mid + 1;
+                } else {
+                    right = mid;
+                }
             }
         }
         return -1;
