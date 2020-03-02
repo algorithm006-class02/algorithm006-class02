@@ -117,7 +117,7 @@ https://leetcode.com/problems/trapping-rain-water/
 [递归树：如何借助树来求解递归算法的时间复杂度？](https://time.geekbang.org/column/article/69388)
 
 
-### Week03
+### Week02
 
 [Java Set 文档](https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/Set.html)
 
@@ -168,4 +168,37 @@ https://leetcode-cn.com/problems/permutations-ii/
 [二分查找（上）：如何用最省内存的方式实现快速查找功能？](https://time.geekbang.org/column/article/42520)
 
 [二分查找（下）：如何快速定位 IP 对应的省份地址？](https://time.geekbang.org/column/article/42733)
+
+
+### Week_03 
+```
+简单：
+https://leetcode-cn.com/problems/lemonade-change/description/
+https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/description/
+https://leetcode-cn.com/problems/assign-cookies/description/
+https://leetcode-cn.com/problems/walking-robot-simulation/description/
+使用二分查找，寻找一个半有序数组 [4, 5, 6, 7, 0, 1, 2] 中间无序的地方
+说明：同学们可以将自己的思路、代码写在第 3 周的学习总结中
+中等：
+https://leetcode-cn.com/problems/word-ladder/description/
+https://leetcode-cn.com/problems/number-of-islands/
+https://leetcode-cn.com/problems/minesweeper/description/
+https://leetcode-cn.com/problems/jump-game/
+https://leetcode-cn.com/problems/search-in-rotated-sorted-array/
+https://leetcode-cn.com/problems/search-a-2d-matrix/
+https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/
+困难
+https://leetcode-cn.com/problems/word-ladder-ii/description/
+https://leetcode-cn.com/problems/jump-game-ii/
+```
+
+### 基础知识
+[动态规划定义](https://en.wikipedia.org/wiki/Dynamic_programming)
+[初识动态规划：如何巧妙解决“双十一”购物时的凑单问题？](https://time.geekbang.org/column/article/74788)
+[动态规划理论：一篇文章带你彻底搞懂最优子结构、无后效性和重复子问题](https://time.geekbang.org/column/article/75702)
+[动态规划实战：如何实现搜索引擎中的拼写纠错功能？](https://time.geekbang.org/column/article/75794)
+[预习题目：最长公共子序列题目](https://leetcode-cn.com/problems/longest-common-subsequence/)
+[预习题目：三角形最小路径和](https://leetcode-cn.com/problems/triangle/description/)
+[预习题目：最大子序和](https://leetcode-cn.com/problems/maximum-subarray/)
+[预习题目：打家劫舍](https://leetcode-cn.com/problems/house-robber/)
 
