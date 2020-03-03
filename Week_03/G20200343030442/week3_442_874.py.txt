@@ -1,0 +1,30 @@
+# --*--coding:utf-8--*--
+# 模拟行走机器人
+# week3_442_874.py
+class Solution:
+    def robotSim(self, commands, obstacles):
+        directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]   # 处理 x , y 上的方向问题
+        obstacles = set([(x, y) for x, y in obstacles])   # 处理障碍坐标
+
+        di = 0
+        x, y = 0, 0
+        ans = 0
+        for command in commands: # 遍历指令
+            if command == -1:    # 如果指令为 -1 即向右转
+                di = (di + 1) % 4
+            elif command == -2:  # 同理如上
+                di = (di + 3) % 4
+            else:
+                for step in range(command): # 每次移动一步循环来走完指令
+                    nx, ny = x + directions[di][0], y + directions[di][1]   # 在对应的方向上移动一步
+                    if (nx, ny) not in obstacles:  # 如果遇到障碍则退出本次循环
+                        x, y = nx, ny
+                        ans = max(ans, x ** 2 + y ** 2)  # 每走一步计算依次距离，并取最大值
+                    else:
+                        break
+        return ans
+
+commands = [4,-1,4,-2,4]
+obstacles = [[2,4]]
+p  = Solution()
+print(p.robotSim(commands,obstacles))
