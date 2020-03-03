@@ -1,28 +1,33 @@
 /**
  * 47. Permutations II
  * https://leetcode.com/problems/permutations-ii/
+ * Example:
+    Input: [1,1,2]
+    Output:
+    [
+      [1,1,2],
+      [1,2,1],
+      [2,1,1]
+    ]
  * @param {number[]} nums
  * @return {number[][]}
  */
-var permuteUnique = function(nums) {
-  let permutations = []
+const permuteUnique = (nums) => {
+  const result = []
+  backtracking(result, nums.sort((a,b)=> a-b))
+  return result
+};
 
-  const findUniquePerm = function(visited = new Set(), currPerm = []) {
-    if (currPerm.length === nums.length){
-      permutations.push(currPerm)
-      return
-    }
-    let uniqueVal = new Set()
+const backtracking = (result, nums, tempList = [], visited = []) => {
+  if (tempList.length === nums.length) return result.push([...tempList])
+  for (let i = 0; i < nums.length; i++) {
+    if (visited[i]) continue
+    if (i > 0 && nums[i] === nums[i-1] && visited[i-1]) continue
 
-    for (let i = 0; i < nums.length; i++) {
-      if (!uniqueVal.has(nums[i]) && !visited.has(i)) {
-        uniqueVal.add(nums[i])
-        findUniquePerm(new Set([...visited, i]), [...currPerm, nums[i]])
-      }
-    }
+    visited[i] = true
+    tempList.push(nums[i])
+    backtracking(result, nums, tempList, visited)
+    visited[i] = false
+    tempList.pop()
   }
-
-  findUniquePerm()
-
-  return permutations
 };
