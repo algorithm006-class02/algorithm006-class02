@@ -49,6 +49,7 @@
 class Solution {
 public:
     /*
+     * 解法一：根据范围判定在哪一行中；再用二分查找
     8ms,88.18%
     */
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
@@ -81,6 +82,25 @@ public:
         return false ;
     }
 
+    /*
+     *解法二：将整个数组当作一个大的一维数组
+     // [0..m*n]
+     // (row, col) -> row*m + col
+     // i -> [i/m][i%m]
+     */
+    bool searchMatrix(vector<vector<int> > &matrix, int target) {
+        int n = matrix.size();
+        int m = matrix[0].size();
+        int l = 0, r = m * n - 1;
+        while (l != r){
+            int mid = (l + r - 1) >> 1;
+            if (matrix[mid / m][mid % m] < target)
+                l = mid + 1;
+            else
+                r = mid;
+        }
+        return matrix[r / m][r % m] == target;
+    }
 
 
 };

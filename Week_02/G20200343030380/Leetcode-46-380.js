@@ -1,48 +1,53 @@
 /**
  * 46. Permutations
  * https://leetcode.com/problems/permutations/
+ * Example:
+    Input: [1,2,3]
+    Output:
+    [
+      [1,2,3],
+      [1,3,2],
+      [2,1,3],
+      [2,3,1],
+      [3,1,2],
+      [3,2,1]
+    ]
  * @param {number[]} nums
  * @return {number[][]}
  */
-var permute = function(nums) {
-  let output = [];
-  
-  function backtrack(first){
-      // if all integers are used up
-      // use distructure operator to clone 'nums' value and save to 'result'
-      if(first === nums.length) output.push([...nums]);
-      
-      // we iterate over the indexes i from 'first' to the length
-      // of the entire sequence 'nums'
-      for(let i = first; i < nums.length; i++){
-          // place i-th integer first
-          // in the current permutation
-          [nums[first], nums[i]] = [nums[i], nums[first]];
-          
-          // use next integers to complete the permutations
-          backtrack(first + 1);
-          
-          // backtrack
-          [nums[first], nums[i]] = [nums[i], nums[first]];
-      }      
-  }
-  
-  backtrack(0);
-  return output;
+// 方法一： 回溯法
+const permute = (nums) => {
+  let result = []  
+  backtrack(result, [], nums)
+  return result
 };
 
+const backtrack = (result, tempList, nums) => {
+  if (tempList.length === nums.length) return result.push([...tempList]) 
+  for (let i = 0; i < nums.length; i++) {
+    if (tempList.includes(nums[i])) continue
+    tempList.push(nums[i])
+    backtrack(result, tempList, nums)
+    tempList.pop()
+  }
+}
 
-
-
-// Python DFS
-//def permute(self, nums):
-//    res = []
-//    self.dfs(nums, [], res)
-//    return res
-//    
-//def dfs(self, nums, path, res):
-//    if not nums:
-//        res.append(path)
-//        # return # backtracking
-//    for i in xrange(len(nums)):
-//        self.dfs(nums[:i]+nums[i+1:], path+[nums[i]], res)
+/*
+tempList:
+[]
+[1]
+  [1,2]
+    [1,2,3] => result = [[1,2,3]]
+  [1,3]
+    [1,3,2] => result = [[1,2,3],[1,3,2]]
+[2]
+  [2,1]
+   [2,1,3] => ... 
+  [2,3]
+    [2,3,1] => ...
+[3]
+  [3,1]
+    [3,1,2] => ...
+  [3,2]
+    [3,2,1] => ...
+*/
