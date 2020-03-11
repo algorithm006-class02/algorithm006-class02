@@ -10,4 +10,4 @@ Dynamic programming
 
 最优子结构，中途可以淘汰次优解
 
-
+递推：自底向上
