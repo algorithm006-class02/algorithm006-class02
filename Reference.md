@@ -1,5 +1,7 @@
 ## 参考链接
 
+[Github fork 合作开发](https://www.cnblogs.com/southday/p/10010876.html?from=groupmessage&isappinstalled=0#bt7)
+
 [java util源码](http://developer.classpath.org/doc/java/util/)
 
 [数据结构和算法动态可视化](https://visualgo.net/zh)
@@ -202,3 +204,9 @@ https://leetcode-cn.com/problems/jump-game-ii/
 [预习题目：最大子序和](https://leetcode-cn.com/problems/maximum-subarray/)
 [预习题目：打家劫舍](https://leetcode-cn.com/problems/house-robber/)
 
+
+
+
+## 群分享
+[Redis面试攻略](https://mp.weixin.qq.com/s/r0pects5PJ8c_QltwNzwEw)
+[数据结构公众号](https://labuladong.gitbook.io/algo/)
