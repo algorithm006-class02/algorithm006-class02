@@ -1,7 +1,8 @@
 学习笔记
 
 [done] https://leetcode-cn.com/problems/minimum-path-sum/
-https://leetcode-cn.com/problems/decode-ways/
+[done] https://leetcode-cn.com/problems/decode-ways/
+
 https://leetcode-cn.com/problems/maximal-square/
 https://leetcode-cn.com/problems/task-scheduler/
 https://leetcode-cn.com/problems/palindromic-substrings/
