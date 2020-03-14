@@ -41,7 +41,7 @@ class Solution:
             for i in range(begin,len(candidates)):
                 if candidates[i] > cur:
                     break
-                if i > begin and candidates[i]==candidates[i-1]:
+                if i > begin and candidates[i]==candidates[i-1]:  ## 保证不会重复解  ，同时 i > begin  保证第一次进入相同数字，会开始
                     continue
                 path.append(candidates[i])
                 helper(cur -candidates[i],path,i+1)
