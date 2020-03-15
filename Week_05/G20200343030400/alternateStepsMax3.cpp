@@ -43,7 +43,7 @@ int alternateStepsMax3(const int& n) {
 int main()
 {
     int n = 10;
-	for (int stairs = 0; stairs <= n; stairs++) {
+    for (int stairs = 0; stairs <= n; stairs++) {
         cout << "n = " << stairs << ";  f_n = " << alternateStepsMax3(stairs) << endl;
     }
 	
