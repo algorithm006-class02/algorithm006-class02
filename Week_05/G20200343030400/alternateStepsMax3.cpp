@@ -22,7 +22,7 @@ int alternateStepsMax3(const int& n) {
     }
 	
 	/*
-	用二维数组dp[boundary_step][distance]来表示第一步（或者是最后一步）上boundary_step个台阶，且总共走了distance个台阶的距离。
+	用二维数组dp[boundary_step][distance]来表示第一步（或者是最后一步）上boundary_step个台阶，且总共走了distance个台阶的距离的走法数。
 	这样递推关系由一个等式就升级为一组等式： 
 	dp[1][n] = dp[2][n-1] + dp[3][n-1] // 先上1个台阶，剩下的n-1个台阶可以先上2个或3个台阶。 
 	dp[2][n] = dp[1][n-2] + dp[3][n-2] // 先上2个台阶，剩下的n-2个台阶可以先上1个或3个台阶。 
