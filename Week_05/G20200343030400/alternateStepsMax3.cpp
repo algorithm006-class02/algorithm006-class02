@@ -6,8 +6,8 @@ int alternateStepsMax3(const int& n) {
     vector<vector<int>> dp(4, vector<int>(max(n, 3) + 1, 0));
 
 	/* 初始条件设定
-	       总步数        n  1 2 3 
-	       总走法数     dp[0] 1 1 3 
+	       总步数         n  1 2 3 
+	       总走法数    dp[0] 1 1 3 
 	 先上1个台阶的走法数 dp[1] 1 0 1 
 	 先上2个台阶的走法数 dp[2] 0 1 1 
 	 先上3个台阶的走法数 dp[3] 0 0 1
