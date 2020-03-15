@@ -3,7 +3,7 @@ package Week_05.G20200343030414;
 /**
  * @author Xinshuai
  * @description 题目链接：https://leetcode-cn.com/problems/triangle/discuss/38735/Python-easy-to-understand-solutions-(top-down-bottom-up)/?utm_source=LCUS&utm_medium=ip_redirect_q_uns&utm_campaign=transfer2china
- * @since 2020-03-15 15:25
+ * @since 2020-03-15 15:29
  */
 public class LeetCode_64_414 {
 
