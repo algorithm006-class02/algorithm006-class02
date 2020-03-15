@@ -21,7 +21,7 @@ int alternateSteps(const int& totalStairs, const int& maxStep) {
             dp[step][stairs] = dp[0][stairs - step] - dp[step][stairs - step];
             dp[0][stairs] += dp[step][stairs];
         }
-        dp[stairs][stairs] = 1;
+        dp[stairs][stairs] = 1;		// 基线条件
         dp[0][stairs]++;
     }
 
