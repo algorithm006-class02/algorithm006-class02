@@ -1,0 +1,12 @@
+#week5_442_64.py
+class Solution:
+    def minPathSum(self,grid):
+        length_i = len(grid)
+        length_j = len(grid[0])
+        for i in range(length_i):
+            for j in range(length_j):
+                if i == j == 0: continue
+                elif i == 0:  grid[i][j] = grid[i][j - 1] + grid[i][j]
+                elif j == 0:  grid[i][j] = grid[i - 1][j] + grid[i][j]
+                else: grid[i][j] = min(grid[i - 1][j], grid[i][j - 1]) + grid[i][j]
+        return grid[-1][-1]
