@@ -14,7 +14,7 @@ using namespace std;
 int alternateSteps(const int& n, const int& maxStep) {
     vector<vector<int>> dp(maxStep + 1, vector<int>(max(n, maxStep) + 1, 0));
     
-	  // 当总步数小于最大步长时，逐步增大步长范围
+    // 当总步数小于最大步长时，逐步增大步长范围
 	
     for (int step = 1; step <= maxStep; step++) {
         for (int i = 1; i < step; i++) {
@@ -25,7 +25,7 @@ int alternateSteps(const int& n, const int& maxStep) {
         dp[0][step]++;
     }
 
-	  // 用上所有可能的步长
+    // 用上所有可能的步长
 	
     for (int step = maxStep + 1; step <= n; step++) {
         for (int i = 1; i <= maxStep; i++) {
