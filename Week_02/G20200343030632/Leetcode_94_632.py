@@ -15,7 +15,8 @@
 class Solution:
     def inorderTraversal(self, root: TreeNode) -> List[int]:
         # return self.inorderTraversal_v1(root)
-        return self.inorderTraversal_v2(root)
+        # return self.inorderTraversal_v2(root)
+        return self.inorderTraversal_v3(root)
     def inorderTraversal_v1(self, root: TreeNode) -> List[int]:
         res = []
         def helper(root: TreeNode, res: List):
@@ -50,6 +51,18 @@ class Solution:
         
         return res
 
+
+    def inorderTraversal_v3(self, root: TreeNode) -> List[int]:
+        stack, res = [], []
+        while stack or root:
+            while root:
+                stack.append(root)
+                root = root.left
+            
+            root = stack.pop()
+            res.append(root.val)
+            root = root.right
+        return res
 
 
 
