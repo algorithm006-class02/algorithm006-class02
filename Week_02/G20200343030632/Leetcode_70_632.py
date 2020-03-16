@@ -12,7 +12,7 @@ class Solution:
             递归解决:
             归纳条件: f(n) = f(n - 1) + f(n - 2)
             1. 退出条件: n <= 2 return n
-            2. 
+            2. 加了一个缓存优化一下
         """
         if n <= 2:
             return n
