@@ -17,7 +17,7 @@ public:
         //vector<vector<bool>> visited( board.size(), 
         //vector<bool>(board[0].size(), false) );
         if(board[row][col] == 'M'){
-            board[row][col] = 'X';
+            board[row][col] = 'X'; 
         } else{
             DFS(row, col, board);
         }
