@@ -1,0 +1,23 @@
+bool validPlalindrome(char *s, int len) {
+    int l = 0, r = len - 1; 
+    while (l <= r) 
+        if (s[l++] != s[r--]) 
+            return false; 
+    return true; 
+}
+int countSubstrings(char *s) {
+    if (!s) 
+        return 0; 
+    int i, j, res, len = strlen(s); 
+    int *dp = (int*)calloc(len, sizeof(int)); 
+    dp[0] = 1; 
+    for (i = 1; i < len; i++) {
+        dp[i] = dp[i - 1]; 
+        for (j = 0; j <= i; j++) {
+            dp[i] += (validPlalindrome(s + j, i - j + 1)) ? 1 : 0; 
+        }
+    }
+    res = dp[len - 1]; 
+    free(dp); 
+    return res; 
+}
