@@ -10,7 +10,7 @@ class Trie {
     /**
      * Inserts a word into the trie.
      */
-    public void insert(String word) {
+    public void insert(String    word) {
         Trie node = this;
         for (char c : word.toCharArray()) {
             node = node.getNode(c) != null ? node.getNode(c) : node.addNode(c);
