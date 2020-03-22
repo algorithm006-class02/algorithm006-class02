@@ -10,3 +10,21 @@
 
 单词搜索2用字典树的时间复杂度是O(N * m * m * k)，DFS的时间复杂度也是O(N * m * m * k)，这里N是单词数，m是边长，k是单词平均长度。
 
+并查集
+ 
+    def _init(self, p):
+        p = [i for i in range(m)]
+    
+    def _union(self, p, i, j):
+        pi = self._parent(p, i)
+        pj = self._parent(p, j)
+        p[pi] = pj
+
+    def _parent(self, p, i):
+        root = i
+        while p[root] != root:
+            root = p[root]
+        while p[i] != i:
+            x = i; i = p[i]; p[x] = root
+        return root
+
