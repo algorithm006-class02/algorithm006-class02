@@ -23,6 +23,15 @@
 - [#122. Best Time to Buy and Sell Stock II](./Leetcode-122-380.js)
 - [#455. Assign Cookies](./Leetcode-455-380.js)
 - [#874. Walking Robot Simulation](./Leetcode-874-380.js)
+- [#55. Jump Game](./Leetcode-55-380.js)
+- [#45. Jump Game II](./Leetcode-45-380.js)
+
+#### 二分查找
+- [#69. Sqrt(x)](./Leetcode-69-380.js)
+- [#367. Valid Perfect Square](./Leetcode-367-380.js)
+- [#33. Search in Rotated Sorted Array](./Leetcode-33-380.js)
+- [#74. Search a 2D Matrix](./Leetcode-74-380.js)
+- [随堂作业：二分查找找有序数组断点](./binary-search.js)
 
 ## 学习笔记
 
@@ -137,3 +146,4 @@
         left = mid + 1
       else
         right = mid - 1
+
