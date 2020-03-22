@@ -1,7 +1,7 @@
 package com.gsf.geekbang_demo.arithmetic.leetCode.week06;
 
 /**
- * 208. 实现 Trie (前缀树)
+ * 208. 实现 Trie (前缀树) 
  */
 public class Demo208 {
     class Trie {
