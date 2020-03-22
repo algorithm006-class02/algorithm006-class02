@@ -1,0 +1,32 @@
+# --*--coding:utf-8--*--
+# :实现一个 Trie (前缀树)，包含 insert, search, 和 startsWith 这三个操作
+#442_Trie_208.py
+class Trie(object):
+    def __init__(self):
+        self.data = {}
+    
+    def insert(self,word):
+        t = self.data
+        for c in word:
+            if c not in t :
+                t[c] = {}
+            t = t[c]
+        t['end'] = True
+
+    def search(self,word):
+        t = self.data
+        for c in word:
+            if c not in t:
+                return False
+            t = t[c]
+        return 'end' in t
+
+    def startsWith(self,prefix):
+        t = self.data
+        for c in prefix:
+            if c not in t:
+                return False
+            t = t[c]
+        return True
+
+
