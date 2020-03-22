@@ -1,6 +1,6 @@
 学习笔记
 
-字典树，也叫前缀树，该数据结构由René de la Briandais于1959年发明。Edward Fredkin截取了查询的英语单词retrieval的中间几个字母，将其命名为Trie。
+字典树，也叫前缀树，该数据结构由René de la Briandais于1959年发明。Edward Fredkin截取了英语单词retrieval（查询）的中间几个字母，将其命名为Trie。
 
 与二叉查找树不同，键不是直接保存在字典树的节点中，而是由根节点到所在节点的路径决定，节点本身可以存储其它额外信息，比如词频。
 
