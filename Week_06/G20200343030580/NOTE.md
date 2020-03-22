@@ -1,5 +1,31 @@
 学习笔记
 
+
+### 双向BFS模板
+
+````
+def TWOENDEDBFS(graph, start, end):
+    visited = set()
+	frontQueue = [] 
+    endQueue = [] 
+	frontQueue.append([start]) 
+    endQueue.append([end])
+
+	while frontQueue && endQueue: 
+        switchIfNecessary(frontQueue, endQueue)
+
+		node = frontQueue.pop() 
+		visited.add(node)
+
+		process(node) 
+		nodes = generate_related_nodes(node) 
+
+		frontQueue.push(nodes)
+
+	# other processing work 
+	...
+````
+
 ### 130. 被围绕的区域 的非并查集解法
 ````
 class Solution {
