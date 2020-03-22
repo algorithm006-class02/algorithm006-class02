@@ -8,7 +8,7 @@
 
 字典树是用空间换时间，利用字符串的公共前缀来提高查询效率。
 
-单词搜索2用字典树的时间复杂度是O(N * m * m * k)，DFS的时间复杂度也是O(N * m * m * k)，这里N是单词数，m是边长，k是单词平均长度。
+单词搜索2用字典树的时间复杂度是O(N * m * n * k)，DFS的时间复杂度也是O(N * m * n * k)，这里N是单词数，m、n是边长，k是单词平均长度。
 
 并查集
  
@@ -31,26 +31,23 @@
 
 双向BFS
 
-    def BDBFS(graph, start, end):
-        visited = set()
-        begin_queue = [] 
-        begin_queue.append([start]) 
-        end_queue = [] 
-        end_queue.append([end]) 
+    def BDBFS(graph, begin, end):
+        begin_queue = {begin}
+        end_queue = {end} 
+        visited = {begin, end}
 
         while begin_queue: 
             node = begin_queue.pop() 
             visited.add(node)
-            next_queue = []
+            next_queue = {}
 
             process(node) 
             nodes = generate_related_nodes(node) 
             if nodes in end_queue:
-                return true
+                return result
             next_queue.push(nodes)
 
             begin_queue = next_queue
             if len(begin_queue) > len(end_queue):
                 swap(begin_queue, end_queue)
-
-        
+                
