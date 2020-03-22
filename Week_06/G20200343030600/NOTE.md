@@ -126,3 +126,79 @@ public int bs(int[] arr, int target) {
     return -1
 }
 ```
+**字典树 Trie**
+```java
+class Trie {
+    private Trie[] links;
+    private boolean isEnd;
+    private final int R = 26;
+    /** Initialize your data structure here. */
+    public Trie() {
+        links = new Trie[26];
+    }
+
+    /** Inserts a word into the trie. */
+    public void insert(String word) {
+        Trie tmp = this;
+        for(char c : word.toCharArray()) {
+            if(tmp.links[c - 'a'] == null)
+                tmp.links[c - 'a'] = new Trie();
+            tmp = tmp.links[c - 'a'];
+        }
+        tmp.isEnd = true;
+    }
+
+    /** Returns if the word is in the trie. */
+    public boolean search(String word) {
+        Trie tmp = this;
+        for(char c : word.toCharArray()) {
+            if(tmp.links[c - 'a'] == null)
+                return false;
+            tmp = tmp.links[c - 'a'];
+        }
+        return tmp.isEnd ? true : false;
+    }
+
+    /** Returns if there is any word in the trie that starts with the given prefix. */
+    public boolean startsWith(String prefix) {
+        Trie tmp = this;
+        for(char c : prefix.toCharArray()) {
+            if(tmp.links[c - 'a'] == null)
+                return false;
+            tmp = tmp.links[c - 'a'];
+        }
+        return true;
+    }
+}
+```
+**并查集 Disjoint Set**
+```java
+class UnionFind {
+    private int count = 0;
+    private int[] parent;
+
+    public UF(int n) {
+        count = n;
+        parent = new int[n];
+        for(int i = 0; i < n; i++) {
+            parent[i] = i;
+        }
+    }
+
+    public int find(int i) {
+        while(parent[i] != i) {
+            parent[i] = parent[parent[i]];
+            i = parent[i];
+        }
+        return i;
+    }
+
+    public void union(int i, int j) {
+        int rootI = find(i);
+        int rootJ = find(j);
+        if(rootI == rootJ) return;
+        parent[rootI] = rootJ;
+        count--;
+    }
+}
+```
