@@ -1,0 +1,16 @@
+#week5_442_91.py
+class Solution:
+    def numDecodings(self, s: str) -> int:
+        memo = {'':1}
+        def decode(s):
+            if s in memo:
+                return memo[s]
+            if s[0] == '0':
+                return 0
+            if len(s) == 1:
+                return 1
+            memo[s] = decode(s[1:])
+            if int(s[0:2]) <= 26:
+                memo[s] += decode(s[2:])
+            return memo[s]
+        return decode(s)
