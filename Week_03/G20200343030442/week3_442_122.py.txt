@@ -1,0 +1,23 @@
+#--*--coding:utf-8--*--
+#122. 买卖股票的最佳时机 II
+# week3_442_122.py
+
+class Solution:
+    def maxProfit(self,prices):
+        length = len(prices)
+        if length < 2:
+            return 0
+        price_res = 0
+        for i in range(1,length):
+            price_val = prices[i] - prices[i - 1]
+            if price_val > 0 :
+                price_res += price_val
+        return price_res
+
+a = [1,2,3,4,5]
+b = [7,6,4,3,1]
+c = [7,1,5,3,6,4]
+p = Solution()
+print(p.maxProfit(a))
+print(p.maxProfit(b))
+print(p.maxProfit(c))

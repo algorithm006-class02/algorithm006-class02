@@ -1,0 +1,35 @@
+#--*--coding:utf-8--*--
+#分饼干
+#findContentChildren_455.py
+# week3_442_455.py
+
+class Solution:
+    def findContentChildren(self,g,s):
+        g_val = sorted(g)
+        s_val = sorted(s)
+        length_g = len(g)
+        length_s = len(s)
+        if length_g == 0 or  length_s== 0 :
+            return False
+        i = j = 0
+        while not (i == length_g or j == length_s):
+            if g_val[i] <= s_val[j]:
+                i += 1
+            j += 1
+        return i
+g = [1,2,3]
+s = [1,1]
+p = Solution()
+print(p.findContentChildren(g,s))
+
+g = [1,2]
+s = [1,1,1]
+print(p.findContentChildren(g,s))
+
+g = [1]
+s = [1]
+print(p.findContentChildren(g,s))
+
+g = [10,9,8,7]
+s = [5,6,7,8]
+print(p.findContentChildren(g,s))
