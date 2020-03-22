@@ -28,3 +28,29 @@
             x = i; i = p[i]; p[x] = root
         return root
 
+
+双向BFS
+
+    def BDBFS(graph, start, end):
+        visited = set()
+        begin_queue = [] 
+        begin_queue.append([start]) 
+        end_queue = [] 
+        end_queue.append([end]) 
+
+        while begin_queue: 
+            node = begin_queue.pop() 
+            visited.add(node)
+            next_queue = []
+
+            process(node) 
+            nodes = generate_related_nodes(node) 
+            if nodes in end_queue:
+                return true
+            next_queue.push(nodes)
+
+            begin_queue = next_queue
+            if len(begin_queue) > len(end_queue):
+                swap(begin_queue, end_queue)
+
+        
