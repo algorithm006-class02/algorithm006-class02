@@ -1,0 +1,25 @@
+#442_findCircleNum_547.py
+class Solution:
+    def findCircleNum(self, M: List[List[int]]) -> int:
+        map=[i for i in range(len(M))]
+        for i in range(len(M)):
+            for j in range(len(M[0])):
+                if M[i][j]==1:
+                    self.unionSet(map,i,j)
+        s={self.getRoot(map,i) for i in range(len(M))}
+        return len(s)
+                    
+    def unionSet(self,map,i,j):
+        if self.getRoot(map,i)!=self.getRoot(map,j):
+            map[map[i]]=map[j]
+        
+    def getRoot(self,map,i):
+        start=i
+        while map[start]!=start:
+            start=map[start]
+        j=i
+        while map[j]!=j:
+            t=map[j]
+            map[j]=start
+            j=t
+        return start
