@@ -26,3 +26,42 @@ a^b^c = a^(b^c) = (a^b)^c
 
 #### 
 x&（x-1） => 清零最后的1
+
+
+## Bloom Filter
+Bloom filter  用于判别一个元素是不是在一个集合里面，查询效率很高。
+
+#### 应用场景
+1. 网页爬虫的去重
+2. 反垃圾邮件
+3. 缓存击穿
+ [原理](https://blog.csdn.net/tianyaleixiaowu/article/details/74721877) [布隆过滤器(Bloom Filter)的原理和实现](https://www.cnblogs.com/cpselvis/p/6265825.html)
+
+
+## LRU cache
+
+less recently used?
+示例代码
+```python
+class LRUCache(object):
+    def __init__(self,capacity):
+        self.dic = collections.OrderedDict()
+        self.remain = capacity
+
+    def get(self,key):
+            if key not in self.dic:
+                return -1
+            v = self.dic.pop(key)
+            self.dic[key] = v
+            return v
+    
+    def put(self,key,value):
+        if key in  self.dic:
+            self.dic.pop(key)
+        else:
+            if self.remain > 0:
+                self.remain -=-1
+            else:
+                self.dic.popitem(last = False)
+        self.dic[key] = value
+```
