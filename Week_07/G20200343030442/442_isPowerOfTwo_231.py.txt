@@ -1,0 +1,19 @@
+#--*--encoding:utf-8--*--
+"""
+442_isPowerOfTwo_231.py
+X&(-X): 
+当一个偶数与它的负值向与时，结果是能被这个偶数整除的最大的2的n次幂
+当一个奇数与它的负值向与时结果一定是1.
+
+-x 是x 的补码；补码为取反+1
+x&(-x)返回x与2^64的最大公约数,即x最多能被n个2整除就返回2^n；如果x是奇数返回1
+所以返回值为0,表示x=0
+返回值为1,表示x为奇数
+返回值为其他数,表示x为x与2^64的最大公约数
+
+"""
+class Solution:
+    def isPowerOfTwo(self, n: int) -> bool:
+        if n <= 0:
+            return False
+        return n & (-n) == n   # return n & (n - 1) == 0
