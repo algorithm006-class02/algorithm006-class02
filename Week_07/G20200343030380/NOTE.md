@@ -6,11 +6,15 @@
 - [#51. N-Queens](./Leetcode-51-380.js)
 - [#52. N-QueensII](./Leetcode-52-380.js)
 
+**LRU Cache**
+- [#146. LRU Cache](./Leetcode-146-380.js)
+
 **排序**
 - [#1122. Relative Sort Array](./Leetcode-1122-380.js)
 - [#242. Valid Anagram](./Leetcode-242-380.js)
 - [#1244. Design A Leaderboard](./Leetcode-1244-380.js)
 - [#56. Merge Intervals](./Leetcode-56-380.js)
+- [#493. Reverse Pairs](./Leetcode-493-380.js)
 
 ## 学习笔记
 
