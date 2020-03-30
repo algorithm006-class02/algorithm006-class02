@@ -11,6 +11,7 @@
 - [#213. House Robber II](./Leetcode-213-380.js)
 - [#121. Best Time to Buy and Sell Stock](./Leetcode-121-380.js)
 - [#122. Best Time to Buy and Sell Stock II](./Leetcode-122-380.js)
+- [#621. Task Scheduler](./Leetcode-621-380.js)
 
 #### 学习笔记
 
