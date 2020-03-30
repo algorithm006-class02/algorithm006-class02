@@ -1,0 +1,10 @@
+#442-relativeSortArray_1122.py
+class Solution(object):
+    def relativeSortArray(self, arr1, arr2):
+        nums = []
+        for i in arr2:
+            for p in range(arr1.count(i)):
+                nums.append(i)
+                if(i in arr1):
+                    arr1.remove(i)
+        return nums+sorted(arr1)
