@@ -5,6 +5,7 @@
 #
 
 # @lc code=start
+from typing import List
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
         """
@@ -18,6 +19,10 @@ class Solution:
             digits[i] = 0
         digits.insert(0, 1)
         return digits
-        
+
+if __name__ == "__main__":
+    obj = Solution()        
+    input = [1, 2, 2, 9]
+    print(obj.plusOne(input))
 # @lc code=end
 
