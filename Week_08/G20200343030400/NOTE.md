@@ -1,6 +1,6 @@
 学习笔记
 
-
+```
 class Solution:
     def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
         m = len(obstacleGrid)
@@ -10,3 +10,4 @@ class Solution:
             for j in reversed(range(n)):
                 dp[j] = dp[j] + dp[j+1] if not obstacleGrid[i][j] else 0
         return dp[0]
+```
