@@ -10,7 +10,6 @@ class Solution {
         }
         return String.valueOf(arr);
     }
-
     private void swap(char[] arr, int l, int r) {
         while (l < r) {
             char temp = arr[l];
