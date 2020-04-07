@@ -3,7 +3,7 @@
  * @description : LeetCode_242_536
  * @date : 2020/2/21 4:25 下午
  */
-public class LeetCode_242_536 {
+public class LeetCode_242_536_1 {
 
     public boolean isAnagram(String s, String t) {
         if (s == null && t == null) {
