@@ -1,0 +1,32 @@
+# 442-firstUniqChar_387.py
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+
+        for i , c in enumerate(s):
+            if s.count(c) == 1:
+                return i 
+        return -1
+
+
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        dict = {c:s.count(c) for c in set(s)}
+
+        for i , s in enumerate(s):
+            if dict[s] == 1:
+                return i 
+        return -1
+
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        l = {}
+        for i in s :
+            if i not in l:
+                l[i] = 1
+            else:
+                l[i] += 1
+
+        for i , s in enumerate(s):
+            if l[s] == 1:
+                return i 
+        return -1

@@ -1,0 +1,53 @@
+#442_reverseWords_151.py
+
+# class Solution:
+#     def reverseWords(self, s: str) -> str:
+#         s = s.strip()
+#         print(s)
+#         b = s.split()
+#         print(b)
+#         res = ''
+#         for i in range(1,len(b)+1):
+#             if i == len(b):
+#                 mid = b[-i]
+#             else:
+#                 mid = b[-i] + ' '
+#             res += mid
+#         return res
+#         print(res)
+
+# class Solution:
+#     def reverseWords(self, s: str) -> str:
+#         return " ".join(reversed(s.split()))
+
+class Solution:
+    def reverseWords(self, s: str) -> str:       
+        s = s.strip()
+        
+        left = 0
+        right = len(s) - 1
+        
+        d = deque()
+        word = []
+        while left <= right:
+            while left <= right and s[left] != ' ':
+                word.append(s[left])
+                left += 1
+            d.appendleft(''.join(word))
+            print(d)
+            print(word)
+            word = []
+            while left <= right and s[left] == ' ':
+                left += 1
+                
+        return ' '.join(d)
+
+
+# p = Solution()
+# print(p.reverseWords("the sky is blue"))
+
+# list=['1','2','3','a','b','c']
+# print(' '.join(list))
+# print('#'.join(list[2:3]))
+# print(list[2:3])
+# print(list[0:4:2])
