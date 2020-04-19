@@ -28,15 +28,5 @@ class Solution(object):
                 dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j]
 
         return dp[-1][-1]
-    
-    def minPathSum_v2(self, grid):
-        # 动态规划, 自底向上
-        # 状态方程: dp[i][j] = min(dp[i][j - 1], dp[i - 1][j]) + a[i][j]
 
-        dp = grid
-        row_length, col_length = len(grid), len(grid[0])
-        for i in range(row_length - 2, -1, -1):
-            for j in range(col_length - 2, -1, -1):
-                dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j]
-        return dp[0][0]
     

@@ -2,7 +2,7 @@
 
 ## 讲师课件下载地址
 
-请大家通过该链接查看讲师课件并进行下载：链接:https://pan.baidu.com/s/18S8C5ZIXfzbOTr378B4n3A  密码:964l
+请大家通过该链接查看讲师课件并进行下载：链接:https://pan.baidu.com/s/14kX8vGP4_0lMyC9FaBu8Tw  密码:31zj
 
 
 ## 仓库目录结构说明
